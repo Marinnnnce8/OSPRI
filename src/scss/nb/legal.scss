@@ -1,33 +1,21 @@
 .nb-legal {
-	padding: $nbGutterSmall 0;
+	padding: 0 0 0 15px;
+	width: 50%;
 
 	ul {
 		margin: 0;
 		padding: 0;
 
 		li {
-			display: inline-block;
 			list-style: none;
-			margin: 0;
+			margin: 0 0 15px;
 			padding: 0;
 
 			a {
-				color: $nbGrey;
-
+				color: $blue-darker;
 				@include hover {
 					color: $nbBlack;
 				}
-			}
-
-			&:after {
-				content: "|";
-				color: $nbLightGrey;
-				display: inline-block;
-				padding: 0 $nbGutter;
-			}
-
-			&:last-child:after {
-				content: "";
 			}
 
 			@media (max-width: $breakpointMobile) {
@@ -39,4 +27,8 @@
 			}
 		}
 	}
+	@media (max-width: $breakpointSmall) {
+		padding: 0;
+        width: 100%;
+    }
 }

@@ -15,6 +15,7 @@ $white: #fff;
 $black: #000;
 $blue: #005cbb;
 $blue-dark: #003f80;
+$blue-darker: #005dbc;
 $blue-darkest: #004081;
 $blue-pastel: #3dc1fb;
 $blue-light: #d9e7f5;
@@ -94,7 +95,7 @@ $nbGutterXsmall: $nbGutterSmall / 2;
 // Colour
 $nbWhite: #fff;
 $nbBlack: #241d1e;
-$nbRed: #e11e2f;
+$nbRed: #bc0010;
 $nbGrey: lighten($nbBlack, $nbCent);
 $nbLightGrey: lighten($nbGrey, $nbCent);
 $nbOffWhite: lighten($nbLightGrey, $nbCent / 2);

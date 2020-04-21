@@ -1,19 +1,23 @@
 .nb-credit {
 	line-height: 1;
-	padding-top: $nbGutterSmall;
+	font-size: 13px;
 
 	a {
-		color: $nbBlack;
-		font-weight: 700;
+		color: $nbRed;
+		font-size: inherit;
 
 		@include hover {
-			color: $nbRed;
-			text-decoration: none;
+			color: $nbBlack;
 		}
 
 		img {
 			height: 0.9rem;
+			width: auto;
 			vertical-align: bottom;
 		}
+	}
+	@media (max-width: $breakpointSmall) {
+		text-align: right;
+		width: 100%;
 	}
 }
