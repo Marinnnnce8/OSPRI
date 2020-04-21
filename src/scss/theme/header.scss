@@ -1,0 +1,398 @@
+.header {
+    border-top: 4px solid $blue-light;
+
+    nav {
+        padding: 0 90px 7px;
+        flex-direction: column;
+    }
+
+    .uk-logo {
+        margin-top: -21px;
+
+        img {
+            max-width: 475px;
+            width: 100%;
+        }
+    }
+
+    .nav-top {
+        margin-bottom: 0;
+        padding-left: 0;
+
+        li {
+            a {
+                font-size: 14px;
+            }
+
+            &:first-of-type {
+                display: flex;
+                align-items: center;
+
+                a {
+                    color: $blue-darkest;
+                    position: relative;
+                    padding-right: 55px;
+                    padding-left: 20px;
+
+                    &::before {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 33px;
+                        font-size: inherit;
+                        color: inherit;
+                    }
+
+                    @include hover {
+                        color: rgba($blue-darkest, .7);
+                    }
+                }
+            }
+
+            &:last-of-type {
+                a {
+                    background-color: $blue-light;
+                    position: relative;
+                    display: inline-block;
+                    padding: 13px 17px 8px 22px;
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        top: -7px;
+                        font-family: 'svgicons';
+                        color: $blue-light;
+                        font-size: 20px;
+                    }
+
+                    &::before {
+                        content: font-char($rounded-corner-left);
+                        right: 100%;
+                    }
+
+                    &::after {
+                        content: font-char($rounded-corner-right);
+                        left: 100%;
+                    }
+                }
+
+                img {
+                    max-width: 80px;
+                }
+            }
+        }
+    }
+
+    .nav-bottom {
+
+        button:not(.burger-menu),
+        a:not(.uk-logo) {
+            padding: 0 15px;
+            color: $blue;
+            font-family: $font-rubik;
+            font-size: 16px;
+            font-weight: $bold;
+
+            @include hover {
+                color: $blue-pastel;
+            }
+        }
+
+        button:not(.burger-menu) {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                font-family: 'svgicons';
+                font-size: 9px;
+                color: inherit;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                content: font-char($chevron-down);
+            }
+        }
+
+        .uk-open {
+            color: $blue-pastel;
+        }
+
+        .uk-navbar-dropdown {
+            background: $white;
+            border-radius: 20px;
+            box-shadow: none;
+            min-width: 300px;
+            margin-top: 20px;
+            padding: 25px 23px 27px;
+
+            a {
+                display: block;
+                border-radius: 10px;
+                padding: 12px 20px 12px 24px;
+
+                @include hover {
+                    background-color: $blue-lightest;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $breakpointLarge) {
+        nav {
+            padding: 0 20px 0 40px;
+        }
+
+        .uk-logo {
+            margin-top: 0;
+        }
+
+        .nav-bottom {
+            padding-top: 10px;
+            flex-direction: row-reverse;
+        }
+    }
+
+    @media (max-width: $breakpointSmall) {
+        nav {
+            padding: 0 20px;
+        }
+
+        .nav-top {
+            justify-content: flex-start;
+
+            li {
+                &:first-of-type {
+                    display: none;
+                }
+
+                &:last-of-type {
+                    a {
+                        padding: 8px 15px 7px 20px;
+                    }
+
+                    img {
+                        max-width: 50px;
+                    }
+                }
+            }
+        }
+
+        .nav-bottom {
+            flex-direction: column;
+            padding-top: 0;
+            margin-top: -34px;
+        }
+    }
+}
+
+.burger-menu {
+    background-color: $blue-light;
+    border-radius: 10px;
+    width: 56px;
+    height: 56px;
+    margin-right: 30px;
+    top: -10px;
+    position: relative;
+
+    span {
+        pointer-events: none;
+        z-index: 0;
+        position: absolute;
+        background: $blue-darkest;
+        left: 50%;
+        width: 21px;
+        height: 3px;
+        content: '';
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .5s ease-in-out;
+
+        &::after,
+        &::before {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: $blue-darkest;
+            content: '';
+            transition: .5s ease-in-out;
+        }
+
+        &::after {
+            top: -7px;
+        }
+
+        &::before {
+            top: 7px;
+        }
+    }
+
+    &.burger-menu-active {
+        span {
+            background-color: transparent;
+
+            &::after,
+            &::before {
+                top: auto;
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+
+            &::before {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    @media (max-width: $breakpointSmall) {
+        align-self: flex-end;
+
+        &.burger-menu {
+            background-color: transparent;
+            margin-right: 0;
+            top: 0;
+            right: -17px;
+            height: 50px;
+        }
+    }
+}
+
+.uk-modal {
+    background-color: transparent;
+    padding: 0;
+    top: 152px;
+    
+    @media (max-width: $breakpointSmall) {
+        top: 100px;
+    }
+}
+
+.uk-modal-dialog {
+    padding: 0 20px;
+    background-color: transparent;
+
+    .nav-bottom {
+        background-color: $blue-light-alt;
+        padding: 40px 40px 53px 45px;
+        border-radius: 20px;
+        position: relative;
+
+        button,
+        a {
+            display: block;
+            color: $blue;
+            font-family: $font-rubik;
+            font-size: 26px;
+            font-weight: $bold;
+            text-align: left;
+            padding: 18px 20px 18px 28px;
+            border-radius: 15px;
+            width: 100%;
+
+            @include hover {
+                background-color: $blue-lightest;
+                color: $blue-pastel;
+            }
+        }
+
+        button span {
+            position: relative;
+
+            &::after {
+                right: -22px;
+                content: font-char($chevron-right);
+                font-size: 16px;
+                font-family: 'svgicons';
+                color: inherit;
+                top: 50%;
+                position: absolute;
+                transform: translateY(-50%);
+            }
+        }
+
+        .uk-open {
+            color: $blue-pastel;
+        }
+    }
+
+    .uk-navbar-dropdown {
+        background-color: $blue-light-alt;
+        padding: 43px 40px 53px 48px;
+        border-radius: 20px;
+        top: 0 !important; // sass-lint:disable-line no-important
+        left: 0 !important; // sass-lint:disable-line no-important
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+
+        span {
+            color: $blue-pastel;
+            font-size: 26px;
+            font-weight: $bold;
+            font-family: $font-rubik;
+            padding: 18px 20px 18px 28px;
+        }
+
+        button {
+            font-size: 18px;
+            position: relative;
+
+            &::after {
+                left: 10px;
+                content: font-char($chevron-left);
+                font-size: 16px;
+                font-family: 'svgicons';
+                color: inherit;
+                top: 50%;
+                position: absolute;
+                transform: translateY(-50%);
+                font-weight: inherit;
+            }
+
+            @include hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    @media (max-width: $breakpointSmall) {
+        padding: 0 5px;
+
+        .nav-bottom {
+            padding: 15px;
+
+            button,
+            a {
+                font-size: 16px;
+            }
+
+            button,
+            a,
+            li>span {
+                padding: 14px 11px 14px 18px;
+            }
+
+            button span::after {
+                font-size: 10px;
+                right: -12px;
+            }
+        }
+
+        .uk-navbar-dropdown {
+            padding: 10px 15px 25px;
+
+            button::after {
+                font-size: 10px;
+                left: 6px;
+            }
+
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+}

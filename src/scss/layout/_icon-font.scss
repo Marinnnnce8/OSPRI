@@ -1,0 +1,133 @@
+@font-face {
+	font-family: 'svgicons';
+	src: url('../fonts/svgicons.woff2') format('woff2'),
+		url('../fonts/svgicons.woff') format('woff'),
+		url('../fonts/svgicons.ttf') format('truetype');
+		font-display: swap;
+}
+
+@mixin font-styles {
+	font-family: 'svgicons';
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+	display: block;
+	line-height: 1;
+}
+
+%font {
+	@include font-styles;
+}
+
+@function font-char($filename) {
+	$char: "";
+
+	@if $filename == at {
+		$char: '\E001';
+	}
+	@if $filename == calendar {
+		$char: '\E002';
+	}
+	@if $filename == chevron-arrow-down {
+		$char: '\E003';
+	}
+	@if $filename == chevron-left {
+		$char: '\E004';
+	}
+	@if $filename == chevron-right {
+		$char: '\E005';
+	}
+	@if $filename == data-report {
+		$char: '\E006';
+	}
+	@if $filename == envelope {
+		$char: '\E007';
+	}
+	@if $filename == guidance {
+		$char: '\E008';
+	}
+	@if $filename == home {
+		$char: '\E009';
+	}
+	@if $filename == info {
+		$char: '\E00A';
+	}
+	@if $filename == phone {
+		$char: '\E00B';
+	}
+	@if $filename == rounded-corner-left {
+		$char: '\E00C';
+	}
+	@if $filename == rounded-corner-right {
+		$char: '\E00D';
+	}
+	@if $filename == user-circle {
+		$char: '\E00E';
+	}
+
+	@return $char;
+}
+
+@mixin font($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %font;
+		} @else {
+			@include font-styles;
+		}
+		content: font-char($filename);
+	}
+}
+
+[class*='font-ico'] {
+	display: inline-block;
+}
+
+.font-at {
+	@include font(at);
+}
+.font-calendar {
+	@include font(calendar);
+}
+.font-chevron-arrow-down {
+	@include font(chevron-arrow-down);
+}
+.font-chevron-left {
+	@include font(chevron-left);
+}
+.font-chevron-right {
+	@include font(chevron-right);
+}
+.font-data-report {
+	@include font(data-report);
+}
+.font-envelope {
+	@include font(envelope);
+}
+.font-guidance {
+	@include font(guidance);
+}
+.font-home {
+	@include font(home);
+}
+.font-info {
+	@include font(info);
+}
+.font-phone {
+	@include font(phone);
+}
+.font-rounded-corner-left {
+	@include font(rounded-corner-left);
+}
+.font-rounded-corner-right {
+	@include font(rounded-corner-right);
+}
+.font-user-circle {
+	@include font(user-circle);
+}
+
