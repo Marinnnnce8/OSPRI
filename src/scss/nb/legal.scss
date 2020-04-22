@@ -13,9 +13,6 @@
 
 			a {
 				color: $blue-darker;
-				@include hover {
-					color: $nbBlack;
-				}
 			}
 
 			@media (max-width: $breakpointMobile) {

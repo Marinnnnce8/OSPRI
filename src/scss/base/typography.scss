@@ -7,25 +7,32 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font-default;
-	font-weight: normal;
-	line-height: 1.35em;
+	font-weight: $bold;
+	font-family: $font-rubik;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $blue-dark;
 }
 
 h1 {
-	font-size: 48px;
+	font-size: 67px;
 }
 
 h2 {
-	font-size: 36px;
+	font-size: 44px;
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 34px;
 }
 
 h4 {
-	font-size: 24px;
+	font-size: 26px;
 }
 
 h5 {
@@ -34,22 +41,21 @@ h5 {
 
 h6 {
 	font-size: 16px;
+	text-transform: uppercase;
 }
-
 
 p {
 	margin-bottom: 15px;
 	font-size: 18px;
+	color: $nbGrey;
+
+	a {
+		font-size: inherit;
+	}
 }
 
 a {
 	font-size: 16px;
-}
-
-blockquote {
-	border-top: 1px solid $black;
-	border-bottom: 1px solid $black;
-	padding: 30px 0;
 }
 
 ul {
@@ -57,7 +63,7 @@ ul {
 }
 
 ol li {
-	list-style-type: decimal-leading-zero;
+	list-style-type: decimal;
 }
 
 

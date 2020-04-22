@@ -57,17 +57,23 @@
 	@if $filename == info {
 		$char: '\E00A';
 	}
-	@if $filename == phone {
+	@if $filename == minus {
 		$char: '\E00B';
 	}
-	@if $filename == rounded-corner-left {
+	@if $filename == phone {
 		$char: '\E00C';
 	}
-	@if $filename == rounded-corner-right {
+	@if $filename == plus {
 		$char: '\E00D';
 	}
-	@if $filename == user-circle {
+	@if $filename == rounded-corner-left {
 		$char: '\E00E';
+	}
+	@if $filename == rounded-corner-right {
+		$char: '\E00F';
+	}
+	@if $filename == user-circle {
+		$char: '\E010';
 	}
 
 	@return $char;
@@ -118,8 +124,14 @@
 .font-info {
 	@include font(info);
 }
+.font-minus {
+	@include font(minus);
+}
 .font-phone {
 	@include font(phone);
+}
+.font-plus {
+	@include font(plus);
 }
 .font-rounded-corner-left {
 	@include font(rounded-corner-left);

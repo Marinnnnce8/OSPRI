@@ -21,18 +21,189 @@ input[type='submit'] {
 	padding: 0;
 }
 
-.btn {
-	background-color: $black;
-	color: $white;
-	display: inline-block;
-	font-size: 14px;
-	font-weight: bold;
-	height: 40px;
-	line-height: 40px;
-	padding: 0 20px;
-	transition: 0.4s ease-out;
+.uk-button, 
+.uk-button-text {
+	font-family: $font-rubik;
+	font-weight: $bold;
+	position: relative;
+	font-size: 16px;
+}
 
+.uk-button-text {
+	color: $blue-darker;
+	padding-right: 30px;
+	
+	&::after {
+		position: absolute;
+		right: 0;
+		font-size: inherit;
+		font-weight: $bold;
+		color: inherit;
+		font-family: 'svgicons';
+		content: font-char($chevron-right);
+	}
+	&::before {
+		display: none;
+	}
+	&.uk-text-large {
+		font-size: 20px;
+	}
+	&.uk-button-text-green {
+		color: $green;	
+	}
+	&.uk-button-text-red {
+		color: $red;	
+	}
 	@include hover {
-		border-radius: 20px;
+		color: $blue-dark;
+		&.uk-button-text-green {
+			color: $green;	
+		}
+		&.uk-button-text-red {
+			color: $red;	
+		}
 	}
 }
+
+.uk-button {
+	border-width: 4px;
+	border-style: solid;
+	border-radius: 15px;
+	text-transform: none;
+	overflow: hidden;
+	padding: 0;
+
+	&::before {
+		--size: 0;
+
+		content: '';
+		position: absolute;
+		background: radial-gradient(circle closest-side, $red, transparent);
+		left: var(--x);
+		top: var(--y);
+		width: var(--size);
+		height: var(--size);
+		transform: translate(-50%, -50%);
+		transition: width .2s ease, height .2s ease;
+		z-index: 1;
+	}
+
+	span {
+		position: relative;
+		pointer-events: none;
+		display: inline-block;
+		padding: 4px 80px 5px 33px;
+		font-size: inherit;
+		width: 100%;
+
+		&::after {
+			position: absolute;
+			right: 26px;
+			font-size: inherit;
+			font-weight: $bold;
+			color: inherit;
+			font-family: 'svgicons';
+			content: font-char($chevron-right);
+		}
+	}
+
+	&.uk-button-small {
+		border-radius: 10px;
+		font-size: 14px;
+
+		span {
+			padding: 2px 52px 2px 25px;
+
+			&::before {
+				right: 20px;
+			}
+		}
+	}
+
+	&.uk-button-large {
+		border-radius: 20px;
+		font-size: 20px;
+
+		span {
+			padding: 4px 60px 5px 36px;
+
+			&::before {
+				right: 20px;
+			}
+		}
+	}
+
+	@include hover {
+		&::before {
+			--size: 400px;
+		}
+
+		&.uk-button-green::before {
+			background: radial-gradient(circle closest-side, $blue-dark, transparent);
+		}
+
+		&.uk-button-red::before {
+			background: radial-gradient(circle closest-side, $green-btn, transparent);
+		}
+	}
+}
+
+.uk-button-primary {
+	background-color: $blue-darker;
+
+	span {
+		color: $white;
+	}
+
+	&.uk-button-green {
+		background-color: $green-btn;
+	}
+
+	&.uk-button-red {
+		background-color: $red-btn;
+	}
+}
+
+.uk-button-default,
+.uk-button-secondary {
+	span {
+		color: $blue-outline-col;
+	}
+
+	&.uk-button-green {
+		span {
+			color: $green;
+		}
+	}
+
+	&.uk-button-red {
+		span {
+			color: $red;
+		}
+	}
+}
+
+.uk-button-default {
+	border-color: $blue-outline-bg;
+
+	&.uk-button-green {
+		border-color: $green-outline-bg;
+	}
+
+	&.uk-button-red {
+		border-color: $red-outline-bg;
+	}
+}
+
+.uk-button-secondary {
+	background-color: $blue-outline-bg;
+
+	&.uk-button-green {
+		background-color: $green-outline-bg;
+	}
+
+	&.uk-button-red {
+		background-color: $red-outline-bg;
+	}
+}
+

@@ -17,7 +17,7 @@
 
 <body>
 
-	<header class='header' data-uk-sticky='{"media":960,"animation":"uk-animation-slide-top","show-on-up":true}'>
+	<header class='header'>
 		<nav class='uk-flex uk-flex-between' data-uk-navbar>
 			<ul class='uk-flex uk-flex-right nav-top'>
 				<li><a href='#' class='font-user-circle'>Member's Area</a></li>
@@ -50,8 +50,6 @@
 				</ul>
 				<div id='menu-nav' data-uk-modal class='uk-hidden@l'>
 					<div class='uk-modal-dialog uk-modal-body uk-width-1-1'>
-						<!-- <button class='uk-modal-close-default uk-position-top-right' data-uk-close
-							aria-label='Close navigation menu'><span role='presentation'></span></button> -->
 						<ul class='uk-flex uk-flex-column nav-bottom'>
 							<li class='uk-parent'>
 								<button><span>About</span></button>
@@ -79,10 +77,18 @@
 		</nav>
 	</header>
 
-	<main class='nb-main uk-margin-large-top uk-margin-large-bottom'>
-		<div class='uk-container uk-container-small'>
-
-			<h1>This is the Styleguide h1</h1>
+	<main class='nb-main uk-margin-large-bottom'>
+		<div class='banner uk-position-relative'>
+			<div class="nb-main-title-wrap uk-position-bottom-center">
+				<h1>Standard Internal Page</h1>
+				<ul class="uk-breadcrumb">
+					<li><a href="./index.html" class="font-home" aria-label="Visit our homepage"></a></li>
+					<li><a href="#">Category</a></li>
+					<li><span>Standard Internal Page</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class='uk-container uk-container-small nb-standard-container'>
 
 			<p class='uk-text-lead'>This is some lead text to introduce the styleguide. It should gently catch the
 				user&#039;s eye, initiating the reading of the main page content.</p>
@@ -98,22 +104,18 @@
 
 				<figure class="align_center hidpi">
 					<a href="https://aws.nbcommunication.com/template/img/placeholder-castle-banner.jpg">
-						<img alt="This is a centre aligned image"
-							src="https://aws.nbcommunication.com/template/img/placeholder-castle-banner.jpg"
-							width="960" />
+						<img alt="This is a centre aligned image" src="./img/image-center.jpg" width="960" />
 					</a>
-					<figcaption>This is a centred image</figcaption>
+					<figcaption class="uk-position-bottom-right">This is a centred image</figcaption>
 				</figure>
 
 				<h2>Heading h2</h2>
 
 				<figure class="align_right hidpi">
 					<a href="https://aws.nbcommunication.com/template/img/placeholder-columns.jpg">
-						<img alt="This is a right aligned image"
-							src="https://aws.nbcommunication.com/template/img/placeholder-columns.300x0-is-hidpi.jpg"
-							width="300" />
+						<img alt="This is a right aligned image" src="./img/image-right.jpg" width="300" />
 					</a>
-					<figcaption>This is a right-aligned image</figcaption>
+					<figcaption class="uk-position-bottom-right">This is a right-aligned image</figcaption>
 				</figure>
 
 				<p>Vestibulum ut elit ornare massa tincidunt malesuada eu feugiat diam. Nunc erat nisl, rutrum eget
@@ -128,11 +130,9 @@
 
 				<figure class="align_left hidpi">
 					<a href="https://aws.nbcommunication.com/template/img/placeholder-city.jpg">
-						<img alt="This is a left aligned image"
-							src="https://aws.nbcommunication.com/template/img/placeholder-city.300x0-is-hidpi.jpg"
-							width="300" />
+						<img alt="This is a left aligned image" src="./img/image-left.jpg" width="300" />
 					</a>
-					<figcaption>This is a left-aligned image</figcaption>
+					<figcaption class="uk-position-bottom-right">This is a left-aligned image</figcaption>
 				</figure>
 
 				<p>Integer at elementum mi, vitae facilisis purus 4th. Duis quis tellus quis lacus sagittis pharetra a
@@ -155,11 +155,9 @@
 					cursus rutrum.</p>
 
 				<blockquote>
-					<p>Aliquam at ligula elit gravida placerat. Nulla facilisi. In in turpis non eros vehicula
-						adipiscing in feugiat ligula. Vivamus et nulla ultricies, auctor tellus ac, fringilla quam.
-						Pellentesque ut sollicitudin ante. Donec vel adipiscing sapien, at euismod dui. Duis at eros
-						magna <a href="#">example link</a>. Pellentesque nec porttitor dui. Etiam sit amet venenatis
-						enim. Praesent rutrum arcu eget tortor cursus rutrum.</p>
+					<p>Blockquote. Style to be good must be clear. Clearness is secured by using words that are current
+						and ordinary.</p>
+					<span>- Aristotle</span>
 				</blockquote>
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ligula eleifend elit gravida
@@ -170,7 +168,7 @@
 
 			<div class='nb-block nb-block-gallery uk-clearfix' data-nb-block='gallery'>
 
-				<h3>Gallery</h3>
+				<h2>Gallery</h2>
 
 				<div class='nb-gallery-images' data-uk-lightbox='{"animation":"fade"}'
 					data-uk-scrollspy='{"cls":"uk-animation-fade","delay":128,"target":"> .nb-gallery-row > .nb-gallery-image"}'>
@@ -179,44 +177,34 @@
 							class='nb-gallery-image' data-alt='This gallery image has a caption.'
 							data-caption='<div>This gallery image has a caption.</div>'>
 							<img alt='This gallery image has a caption.' width='1151' height='768'
-								src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-								data-src='https://aws.nbcommunication.com/template/img/placeholder-columns.0x768.jpg'
-								data-uk-img>
+								src='./img/gallery-1.jpg' data-src='./img/gallery-1.jpg' data-uk-img>
 						</a>
 						<a href='https://aws.nbcommunication.com/template/img/placeholder-skyscrapers.jpg'
 							class='nb-gallery-image' data-alt data-caption>
-							<img alt='Gallery Block' width='1151' height='768'
-								src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-								data-src='https://aws.nbcommunication.com/template/img/placeholder-skyscrapers.0x768.jpg'
-								data-uk-img>
+							<img alt='Gallery Block' width='1151' height='768' src='./img/gallery-2.jpg'
+								data-src='./img/gallery-2.jpg' data-uk-img>
 						</a>
 					</div>
 					<div class='nb-gallery-row'>
 						<a href='https://aws.nbcommunication.com/template/img/placeholder-sprinkler.jpg'
 							class='nb-gallery-image' data-alt data-caption>
-							<img alt='Gallery Block' width='1151' height='768'
-								src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-								data-src='https://aws.nbcommunication.com/template/img/placeholder-sprinkler.0x768.jpg'
-								data-uk-img>
+							<img alt='Gallery Block' width='1151' height='768' src='./img/gallery-3.jpg'
+								data-src='./img/gallery-3.jpg' data-uk-img>
 						</a>
 						<a href='https://aws.nbcommunication.com/template/img/placeholder-town.jpg'
 							class='nb-gallery-image' data-alt='This gallery image also has a caption with HTML.'
 							data-caption='<div>This <em>gallery</em> image also has a <strong>caption</strong> with HTML.</div>'>
 							<img alt='This gallery image also has a caption with HTML.' width='1151' height='768'
-								src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-								data-src='https://aws.nbcommunication.com/template/img/placeholder-town.0x768.jpg'
-								data-uk-img>
+								src='./img/gallery-4.jpg' data-src='./img/gallery-4.jpg' data-uk-img>
 						</a>
 						<a href='https://aws.nbcommunication.com/template/img/placeholder-waterfall.jpg'
 							class='nb-gallery-image' data-alt data-caption>
-							<img alt='Gallery Block' width='768' height='768'
-								src='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-								data-src='https://aws.nbcommunication.com/template/img/placeholder-waterfall.0x768.jpg'
-								data-uk-img>
+							<img alt='Gallery Block' width='768' height='768' src='./img/gallery-5.jpg'
+								data-src='./img/gallery-5.jpg' data-uk-img>
 						</a>
 					</div>
 				</div>
-				<div class='nb-gallery-caption uk-text-center uk-margin-small-top'>A Gallery Caption</div>
+				<div class='nb-gallery-caption uk-text-right uk-margin-small-top'>A Gallery Caption</div>
 			</div>
 
 			<div class='nb-block nb-block-content uk-clearfix' data-nb-block='content'>
@@ -229,7 +217,7 @@
 					adipiscing sapien, at euismod dui. Duis at eros magna. Pellentesque nec porttitor dui. Etiam sit
 					amet venenatis enim. Praesent rutrum arcu eget tortor cursus rutrum.</p>
 
-				<ul>
+				<ul class="nb-doc-list">
 					<li><a href="https://aws.nbcommunication.com/template/files/test.pdf">PDF File</a> - Download now!
 					</li>
 					<li><a href="https://aws.nbcommunication.com/template/files/test.docx">Word Document</a></li>
@@ -271,7 +259,7 @@
 										data-uk-img='{"target":"#uk-slideshow_gallery_1046"}'>
 								</a>
 								<div
-									class='uk-overlay uk-overlay-primary uk-position-bottom uk-padding-small uk-text-center uk-transition-slide-bottom'>
+									class='uk-overlay uk-position-bottom-right uk-padding-small uk-text-center uk-transition-slide-bottom'>
 									This slideshow image has a caption.
 								</div>
 							</li>
@@ -296,7 +284,7 @@
 										data-uk-img='{"target":"#uk-slideshow_gallery_1046"}'>
 								</a>
 								<div
-									class='uk-overlay uk-overlay-primary uk-position-bottom uk-padding-small uk-text-center uk-transition-slide-bottom'>
+									class='uk-overlay uk-position-bottom-right uk-padding-small uk-text-center uk-transition-slide-bottom'>
 									This slideshow image has a caption <em>too</em>, <s>without</s>
 									<strong>with</strong> HTML!
 								</div>
@@ -312,9 +300,9 @@
 							</li>
 						</ul>
 						<a href='#' data-uk-slidenav-previous aria-label='previous' data-uk-slideshow-item='previous'
-							class='uk-position-small uk-hidden-hover uk-position-center-left'></a>
+							class='uk-hidden-hover uk-position-center-left'></a>
 						<a href='#' data-uk-slidenav-next aria-label='next' data-uk-slideshow-item='next'
-							class='uk-position-small uk-hidden-hover uk-position-center-right'></a>
+							class='uk-hidden-hover uk-position-center-right'></a>
 					</div>
 				</div>
 			</div>
@@ -338,7 +326,7 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Column 1</th>
+							<th>Main Column 1</th>
 							<th>Column 2</th>
 							<th>Column 3</th>
 							<th>Column 4</th>
@@ -347,28 +335,28 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>Row 1</td>
+							<td>Title 1</td>
 							<td>Lorem</td>
 							<td>&pound;99.99</td>
 							<td>Lorem</td>
 							<td>07:00 - 23:00</td>
 						</tr>
 						<tr>
-							<td>Row 2</td>
+							<td>Title 2</td>
 							<td>Lorem</td>
 							<td>&pound;99.99</td>
 							<td>Lorem</td>
 							<td>07:00 - 23:00</td>
 						</tr>
 						<tr>
-							<td>Row 3</td>
+							<td>Title 3</td>
 							<td>Lorem</td>
 							<td>&pound;99.99</td>
 							<td>Lorem</td>
 							<td>07:00 - 23:00</td>
 						</tr>
 						<tr>
-							<td>Row 4</td>
+							<td>Title 4</td>
 							<td>Lorem</td>
 							<td>&pound;99.99</td>
 							<td>Lorem</td>
@@ -377,7 +365,52 @@
 					</tbody>
 				</table>
 
-				<p class="uk-text-small">*This is some small text</p>
+			</div>
+
+			<div class='nb-block nb-block-content uk-clearfix' data-nb-block='content'>
+				<h2 data-uk-scrollspy='cls: uk-animation-fade; delay: 300;'>Accordion Functionality</h2>
+
+				<ul data-uk-accordion data-uk-scrollspy='cls: uk-animation-fade; target: >li; delay: 350;'>
+					<li class='uk-open'>
+						<a class='uk-accordion-title' href='#'>Accordion Title</a>
+						<div class='uk-accordion-content'>
+							<p>To best optimise the page and provide the visitor with useful and informative text, it
+								would be good to have a sentence or two included here. These words are here to provide
+								the reader with a basic impression of how actual text will appear in its final
+								presentation.</p>
+						</div>
+					</li>
+					<li>
+						<a class='uk-accordion-title' href='#'>Accordion Title Opened</a>
+						<div class='uk-accordion-content'>
+							<p>To best optimise the page and provide the visitor with useful and informative text, it
+								would be good to have a sentence or two included here. These words are here to provide
+								the reader with a basic impression of how actual text will appear in its final
+								presentation.</p>
+						</div>
+					</li>
+					<li>
+						<a class='uk-accordion-title' href='#'>Accordion Title</a>
+						<div class='uk-accordion-content'>
+							<p>To best optimise the page and provide the visitor with useful and informative text, it
+								would be good to have a sentence or two included here. These words are here to provide
+								the reader with a basic impression of how actual text will appear in its final
+								presentation.</p>
+						</div>
+					</li>
+					<li>
+						<a class='uk-accordion-title' href='#'>Accordion Title</a>
+						<div class='uk-accordion-content'>
+							<p>To best optimise the page and provide the visitor with useful and informative text, it
+								would be good to have a sentence or two included here. These words are here to provide
+								the reader with a basic impression of how actual text will appear in its final
+								presentation.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class='nb-block nb-block-content uk-clearfix' data-nb-block='content'>
 
 				<h2>Messages</h2>
 
@@ -393,7 +426,7 @@
 				<p class="uk-alert uk-alert-danger"><strong>Danger Text.</strong> The text is providing an error alert
 					to the user</p>
 
-				<h3>Embedded Videos</h3>
+				<h2>Embedded Videos</h2>
 
 				<div class='TextformatterVideoEmbed'
 					style='position:relative;padding:30px 0 56.25% 0;height:0;overflow:hidden;'>
@@ -413,69 +446,149 @@
 				</div>
 			</div>
 
-			<div>
-				<h3>Buttons</h3>
+			<div class='nb-block nb-block-content uk-clearfix' data-nb-block='content'>
+				<h2>Buttons</h2>
 				<div class="uk-grid-medium uk-child-width-1-3@s uk-grid" data-uk-grid>
 					<div class="uk-first-column">
-						<div class="uk-text-meta uk-form-label">Primary</div>
-						<button type="button" class="uk-button uk-button-primary">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary</div>
+						<button type="button" class="uk-button uk-button-primary"><span>Default Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary</div>
+						<button type="button" class="uk-button uk-button-primary uk-button-green"><span>Default
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary</div>
+						<button type="button" class="uk-button uk-button-primary uk-button-red"><span>Default
+								Button</span></button>
+					</div>
+					<div>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline</div>
+						<button type="button" class="uk-button uk-button-default"><span>Default Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline</div>
+						<button type="button" class="uk-button uk-button-default uk-button-green"><span>Default
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline</div>
+						<button type="button" class="uk-button uk-button-default uk-button-red"><span>Default
+								Button</span></button>
+					</div>
+					<div>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary</div>
+						<button type="button" class="uk-button uk-button-secondary"><span>Default Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary</div>
+						<button type="button" class="uk-button uk-button-secondary uk-button-green"><span>Default
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary</div>
+						<button type="button" class="uk-button uk-button-secondary uk-button-red"><span>Default
+								Button</span></button>
+					</div>
+				</div>
+				<div class="uk-grid-medium uk-child-width-1-3@s uk-grid" data-uk-grid>
+					<div class="uk-first-column">
 						<div class="uk-text-meta uk-form-label uk-margin-top">Primary Small</div>
-						<button type="button" class="uk-button uk-button-primary uk-button-small">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
-						<div class="uk-text-meta uk-form-label uk-margin-top">Primary Large</div>
-						<button type="button" class="uk-button uk-button-primary uk-button-large">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
+						<button type="button" class="uk-button uk-button-primary uk-button-small"><span>Small
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary Small</div>
+						<button type="button"
+							class="uk-button uk-button-primary uk-button-green uk-button-small"><span>Small
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary Small</div>
+						<button type="button"
+							class="uk-button uk-button-primary uk-button-red uk-button-small"><span>Small
+								Button</span></button>
 					</div>
 					<div>
-						<div class="uk-text-meta uk-form-label">Default</div>
-						<button type="button" class="uk-button uk-button-default">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
-						<div class="uk-text-meta uk-form-label uk-margin-top">Default Small</div>
-						<button type="button" class="uk-button uk-button-default uk-button-small">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
-						<div class="uk-text-meta uk-form-label uk-margin-top">Default Large</div>
-						<button type="button" class="uk-button uk-button-default uk-button-large">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline Small</div>
+						<button type="button" class="uk-button uk-button-default uk-button-small"><span>Small
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline Small</div>
+						<button type="button"
+							class="uk-button uk-button-default uk-button-green uk-button-small"><span>Small
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline Small</div>
+						<button type="button"
+							class="uk-button uk-button-default uk-button-red uk-button-small"><span>Small
+								Button</span></button>
 					</div>
 					<div>
-						<div class="uk-text-meta uk-form-label">Secondary</div>
-						<button type="button" class="uk-button uk-button-secondary">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
 						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary Small</div>
-						<button type="button" class="uk-button uk-button-secondary uk-button-small">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
+						<button type="button" class="uk-button uk-button-secondary uk-button-small"><span>Small
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary Small</div>
+						<button type="button"
+							class="uk-button uk-button-secondary uk-button-green uk-button-small"><span>Small
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary Small</div>
+						<button type="button"
+							class="uk-button uk-button-secondary uk-button-red uk-button-small"><span>Small
+								Button</span></button>
+					</div>
+				</div>
+				<div class="uk-grid-medium uk-child-width-1-3@s uk-grid" data-uk-grid>
+					<div class="uk-first-column">
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary Large</div>
+						<button type="button" class="uk-button uk-button-primary uk-button-large"><span>Large
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary Large</div>
+						<button type="button"
+							class="uk-button uk-button-primary uk-button-green uk-button-large"><span>Large
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Primary Large</div>
+						<button type="button"
+							class="uk-button uk-button-primary uk-button-red uk-button-large"><span>Large
+								Button</span></button>
+					</div>
+					<div>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline Large</div>
+						<button type="button" class="uk-button uk-button-default uk-button-large"><span>Large
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline Large</div>
+						<button type="button"
+							class="uk-button uk-button-default uk-button-green uk-button-large"><span>Large
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Outline Large</div>
+						<button type="button"
+							class="uk-button uk-button-default uk-button-red uk-button-large"><span>Large
+								Button</span></button>
+					</div>
+					<div>
 						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary Large</div>
-						<button type="button" class="uk-button uk-button-secondary uk-button-large">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
+						<button type="button" class="uk-button uk-button-secondary uk-button-large"><span>Large
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary Large</div>
+						<button type="button"
+							class="uk-button uk-button-secondary uk-button-green uk-button-large"><span>Large
+								Button</span></button>
+						<div class="uk-text-meta uk-form-label uk-margin-top">Secondary Large</div>
+						<button type="button"
+							class="uk-button uk-button-secondary uk-button-red uk-button-large"><span>Large
+								Button</span></button>
 					</div>
 				</div>
 				<h3>Other Button Styles</h3>
 				<div class="uk-grid-medium uk-child-width-1-3@s uk-grid" data-uk-grid="">
 					<div class="uk-first-column">
-						<div class="uk-text-meta uk-form-label">Danger</div>
-						<button type="button" class="uk-button uk-button-danger">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
-					</div>
-					<div class="uk-margin-medium-bottom">
 						<div class="uk-text-meta uk-form-label">Text Normal</div>
-						<button type="button" class="uk-button uk-button-text">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
+						<button type="button" class="uk-button-text">Default Link Button</button>
+						<div class="uk-text-meta uk-form-label">Text Normal</div>
+						<button type="button" class="uk-button-text uk-button-text-green">Default Link Button</button>
+						<div class="uk-text-meta uk-form-label">Text Normal</div>
+						<button type="button" class="uk-button-text uk-button-text-red">Default Link Button</button>
 					</div>
-					<div class="uk-margin-bottom">
+					<div>
 						<div class="uk-text-meta uk-form-label">Text Large</div>
-						<button type="button" class="uk-button uk-button-text uk-text-large">Find Out More <span
-								data-uk-icon='{"icon":"arrow-right","ratio":1}'></span></button>
+						<button type="button" class="uk-button-text uk-text-large">Large Link Button</button>
+						<div class="uk-text-meta uk-form-label">Text Large</div>
+						<button type="button" class="uk-button-text uk-button-text-green uk-text-large">Large Link Button</button>
+						<div class="uk-text-meta uk-form-label">Text Large</div>
+						<button type="button" class="uk-button-text uk-button-text-red uk-text-large">Large Link Button</button>
 					</div>
 				</div>
 			</div>
 
 			<div class='nb-block nb-block-form uk-clearfix' data-nb-block='form'>
 
-				<form id='nb-form-nb-styleguide' class='uk-form-stacked uk-width-2-3@s uk-width-3-5@m InputfieldForm'
-					method='post' data-uk-nb-form novalidate data-colspacing='1'>
+				<form id='nb-form-nb-styleguide' class='uk-form-stacked InputfieldForm' method='post' data-uk-nb-form
+					novalidate data-colspacing='1'>
 
-					<h3>Form Styles</h3>
+					<h2>Form Styles</h2>
 
 					<div class='uk-grid-small' data-uk-grid>
 						<div class='Inputfield InputfieldText nb-form-required uk-width-1-1 uk-first-column'
@@ -498,13 +611,14 @@
 									title='Please enter a valid email address' required>
 							</div>
 						</div>
-						<div class='Inputfield InputfieldText uk-width-1-1 uk-grid-margin uk-first-column'
+						<div class='Inputfield InputfieldText uk-width-1-2@s uk-grid-margin uk-first-column'
 							id='wrap_nb-form-nb-styleguide_tel'>
 							<label class='uk-form-label' for='nb-form-nb-styleguide_tel'>Telephone</label>
+							<span class='nb-placeholder'>Optional</span>
 							<div class='nb-form-content'>
 								<div role='alert'></div>
 								<input id='nb-form-nb-styleguide_tel' class='uk-input InputfieldMaxWidth' name='tel'
-									type='tel' maxlength='2048' placeholder='Optional'>
+									type='tel' maxlength='2048'>
 							</div>
 						</div>
 						<div class='Inputfield InputfieldTextarea nb-form-required uk-width-1-1 uk-grid-margin uk-first-column'
@@ -522,8 +636,7 @@
 							<div class='nb-form-content'>
 								<div role='alert'></div>
 								<button id='nb-form-nb-styleguide_submit' class='uk-button uk-button-primary'
-									name='submit' value='Send' type='submit'><span
-										class='ui-button-text'>Send</span></button>
+									name='submit' value='Send' type='submit'><span>Send Message</span></button>
 							</div>
 						</div>
 					</div>
@@ -532,7 +645,7 @@
 		</div>
 	</main>
 
-	<footer class='footer'>
+	<footer class='footer uk-position-relative'>
 		<span data-uk-img class='footer-banner uk-background-cover'
 			style='background-image: url("./img/footer-banner.jpg");' role="presentation"></span>
 		<div class='uk-container uk-position-relative'>

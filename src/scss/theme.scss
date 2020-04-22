@@ -34,9 +34,7 @@
 
 // Modules
 @import 'modules/banner.scss';
-@import 'modules/basic-block.scss';
-@import 'modules/slider.scss';
-@import 'modules/team-list.scss';
+@import 'modules/report-section.scss';
 
 // Theme
 @import "theme/base.scss";
@@ -49,7 +47,8 @@
 // Template | Remove or Integrate
 
 // uikit/base
-a, .uk-link {
+a,
+.uk-link {
 	color: $nbRed;
 }
 
@@ -69,12 +68,38 @@ a:hover {
 }
 
 // uikit/breadcrumb
-.uk-breadcrumb > :last-child > * {
-    overflow: hidden;
-    text-overflow: ellipsis;
-	white-space: nowrap;
-	display: inline-block;
-	vertical-align: middle;
+.uk-breadcrumb {
+	margin: 0 0 40px;
+	>*>* {
+		font-size: 14px;
+		color: $white;
+		position: relative;
+	}
+
+	>:nth-child(n+2):not(.uk-first-column)::before {
+		content: font-char($chevron-right);
+		font-family: 'svgicons';
+		font-size: 8px;
+		color: $white;
+	}
+	>li:not(:first-of-type) a::after {
+		position: absolute;
+		left: 0;
+		height: 1px;
+		background-color: $white;
+		content: '';
+		width: 100%;
+		bottom: 0;
+	}
+
+	> :last-child>* {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: inline-block;
+		vertical-align: middle;
+		color: $white;
+	}
 
 	@media (max-width: $breakpointXsmallMax) {
 		max-width: 128px;
@@ -89,7 +114,21 @@ a:hover {
 .uk-radio:not(.uk-form-danger),
 .uk-checkbox:checked:not(.uk-form-danger),
 .uk-radio:checked:not(.uk-form-danger) {
-	border-color: $nbBlack;
+	border-color: rgba($blue, .2);
+	border-width: 3px;
+	border-radius: 15px;
+	font-size: 16px;
+	color: $blue-dark;
+	min-height: 55px;
+	padding: 18px 20px;
+	&:focus {
+		border-color: $blue-darker;
+	}
+}
+
+.uk-textarea:not(.uk-form-danger) {
+	min-height: 150px;
+	resize: vertical;
 }
 
 // theme/header
@@ -116,7 +155,7 @@ a:hover {
 		}
 
 		.uk-navbar-item,
-		.uk-navbar-nav > li > a,
+		.uk-navbar-nav>li>a,
 		.uk-navbar-toggle {
 			display: block;
 			min-height: 0;
