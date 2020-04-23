@@ -1,0 +1,163 @@
+.guidance-section {
+    h2 {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    >.uk-container-small {
+        max-width: 785px;
+    }
+    @media (max-width: $breakpointLarge) {
+        >.uk-container {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+    @media (max-width: $breakpointSmall) {
+		>.uk-container {
+			padding-left: 20px;
+			padding-right: 20px;
+        }
+	}
+}
+
+.guidance-list {
+    padding: 0;
+    margin-top: 0;
+
+    li {
+        background-color: $white;
+        box-shadow: 0 5px 33px 13px rgba($blue-outline-col, .05);
+        border-radius: 20px;
+        padding: 40px;
+        transition: $nbSec ease-in-out;
+        margin-bottom: 25px;
+
+        >a {
+            z-index: 1;
+        }
+
+        @include hover {
+            box-shadow: 3px 15px 41px 12px rgba($blue-outline-col, .15);
+            h3 {
+                text-decoration: underline;
+            }
+        }
+    }
+    @media (max-width: $breakpointLarge) {
+        li {
+            padding: 40px 25px 40px 40px;
+        }
+    }
+    @media (max-width: $breakpointSmall) {
+        li {
+            padding: 25px 27px 30px 26px;
+        }
+        .uk-flex {
+            flex-direction: column;
+        }
+    }
+}
+
+.guidance-img {
+    background-color: $blue-outline-bg;
+    border-radius: 10px;
+    height: 70px;
+    padding-top: 8px;
+    padding-left: 16px;
+    width: 70px;
+    min-width: 70px;
+
+    img {
+        width: 40px;
+        height: 52px;
+    }
+    @media (max-width: $breakpointSmall) {
+        margin-bottom: 25px;
+    }
+}
+
+.guidance-title {
+    max-width: 57.7%;
+    padding-left: 40px;
+
+    h3 {
+        font-size: 26px;
+        color: $blue-outline-col;
+    }
+
+    .uk-button {
+        min-width: 220px;
+
+        &::after {
+            right: 16px;
+        }
+    }
+    .guidance-info {
+        display: none;
+    }
+    @media (max-width: $breakpointLarge) {
+        max-width: 55%;
+        h3 {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: $breakpointSmall) {
+        max-width: 100%;
+        padding-left: 0;
+        h3 {
+            margin-bottom: 10px;
+        }
+        .uk-button {
+            width: 100%;
+            max-width: 227px;
+        }
+        .guidance-info {
+            display: block;
+        }
+    }
+}
+
+.guidance-info {
+    padding-left: 30px;
+    max-width: 27%;
+    padding-top: 5px;
+    .font-calendar,
+    .font-info {
+        padding-left: 30px;
+        color: $nbGrey;
+        position: relative;
+        display: block;
+        &::before {
+            color: $blue-outline-col;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+    }
+
+    .font-calendar {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .font-info {
+        font-size: 14px;
+    }
+    @media (max-width: $breakpointLarge) {
+        padding-left: 17px;
+        max-width: 31.7%;
+    }
+    @media (max-width: $breakpointSmall) {
+        max-width: 100%;
+        padding-left: 0;
+        margin-bottom: 20px;
+        display: none;
+    }
+}

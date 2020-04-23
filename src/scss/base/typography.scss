@@ -20,11 +20,22 @@ h6 {
 }
 
 h1 {
+	margin-bottom: 10px;
 	font-size: 67px;
+	color: $white;
+	@media (max-width: $breakpointSmall) {
+		font-size: 47px;
+	}
 }
 
 h2 {
-	font-size: 44px;
+	font-size: 74px;
+	@media (max-width: $breakpointLarge) {
+		font-size: 54px;
+	}
+	@media (max-width: $breakpointSmall) {
+		font-size: 44px;
+	}
 }
 
 h3 {
@@ -66,8 +77,31 @@ ol li {
 	list-style-type: decimal;
 }
 
-
 img {
 	width: 100%;
 	height: auto;
+}
+
+blockquote {
+	margin-left: 18px;
+	border-left: 5px solid $blue-sky;
+	padding: 20px 30px 18px 20px;
+	margin-bottom: 25px;
+
+	p,
+	span {
+		color: $blue-dark;
+		font-style: normal;
+	}
+
+	p {
+		font-family: $font-rubik;
+		font-size: 22px;
+		text-transform: uppercase;
+		font-weight: $bold;
+	}
+
+	span {
+		font-size: 18px;
+	}
 }

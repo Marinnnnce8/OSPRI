@@ -115,7 +115,8 @@
             }
         }
 
-        .uk-open {
+        .uk-open,
+        .uk-active>a {
             color: $blue-pastel;
         }
 
@@ -139,13 +140,27 @@
         }
     }
 
-    @media (max-width: $breakpointLarge) {
+    @media (max-width: $breakpointXlarge) {
         nav {
             padding: 0 20px 0 40px;
         }
 
+        .uk-logo img {
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: $breakpointMediumMin) {
+        nav {
+            padding: 0 20px 5px 40px;
+        }
+
         .uk-logo {
             margin-top: 0;
+
+            img {
+                max-width: 470px;
+            }
         }
 
         .nav-bottom {
@@ -156,7 +171,12 @@
 
     @media (max-width: $breakpointSmall) {
         nav {
-            padding: 0 20px;
+            padding: 0 20px 5px;
+        }
+
+        .uk-logo {
+            display: flex;
+            align-self: flex-start;
         }
 
         .nav-top {
@@ -182,7 +202,7 @@
         .nav-bottom {
             flex-direction: column;
             padding-top: 0;
-            margin-top: -34px;
+            margin-top: -31px;
         }
     }
 }
@@ -252,11 +272,14 @@
         align-self: flex-end;
 
         &.burger-menu {
-            background-color: transparent;
             margin-right: 0;
             top: 0;
-            right: -17px;
-            height: 50px;
+            right: -15px;
+            height: 48px;
+            width: 48px;
+            &:not(.burger-menu-active) {
+                background-color: transparent;
+            }
         }
     }
 }
@@ -265,7 +288,7 @@
     background-color: transparent;
     padding: 0;
     top: 152px;
-    
+
     @media (max-width: $breakpointSmall) {
         top: 100px;
     }
@@ -276,6 +299,7 @@
     background-color: transparent;
 
     .nav-bottom {
+        box-shadow: 0 5px 15px rgba($black, .08);
         background-color: $blue-light-alt;
         padding: 40px 40px 53px 45px;
         border-radius: 20px;
@@ -357,6 +381,11 @@
                 background-color: transparent;
             }
         }
+    }
+
+    .uk-active>a,
+    .uk-navbar-dropdown-nav>li.uk-active>a {
+        color: $blue-pastel;
     }
 
     @media (max-width: $breakpointSmall) {

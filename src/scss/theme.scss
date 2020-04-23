@@ -35,6 +35,8 @@
 // Modules
 @import 'modules/banner.scss';
 @import 'modules/report-section.scss';
+@import 'modules/guidance-section.scss';
+@import 'modules/about-section.scss';
 
 // Theme
 @import "theme/base.scss";
@@ -70,6 +72,7 @@ a:hover {
 // uikit/breadcrumb
 .uk-breadcrumb {
 	margin: 0 0 40px;
+
 	>*>* {
 		font-size: 14px;
 		color: $white;
@@ -80,8 +83,10 @@ a:hover {
 		content: font-char($chevron-right);
 		font-family: 'svgicons';
 		font-size: 8px;
+		margin: 0 11px;
 		color: $white;
 	}
+
 	>li:not(:first-of-type) a::after {
 		position: absolute;
 		left: 0;
@@ -101,9 +106,35 @@ a:hover {
 		color: $white;
 	}
 
-	@media (max-width: $breakpointXsmallMax) {
-		max-width: 128px;
+	.font-home::before {
+		font-size: 18px;
+		top: 2px;
+		position: relative;
 	}
+
+	a {
+		&::after {
+			transition: inherit;
+		}
+
+		@include hover {
+			color: $white;
+
+			&::after {
+				opacity: 0;
+			}
+		}
+
+		&.font-home {
+			@include hover {
+				color: rgba($white, .7);
+			}
+		}
+	}
+
+	// @media (max-width: $breakpointXsmallMax) {
+	// 	max-width: 128px;
+	// }
 }
 
 // uikit/form
@@ -121,6 +152,7 @@ a:hover {
 	color: $blue-dark;
 	min-height: 55px;
 	padding: 18px 20px;
+
 	&:focus {
 		border-color: $blue-darker;
 	}

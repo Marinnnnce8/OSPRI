@@ -1,6 +1,14 @@
 .footer {
-    background-color: $blue-light;
     overflow: hidden;
+    &::before {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: $blue-light;
+        bottom: 0;
+        content: '';
+        height: 50%;     
+    }
 
     .uk-container {
         min-height: 930px;
@@ -22,6 +30,47 @@
         color: $white;
     }
 
+    .banner-outer-border {
+		width: 300%;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		bottom: 0;
+		position: absolute;
+		clip-path: url('#svgFooterOuterPath');
+        background-color: $blue-light;
+	}
+	.banner-inner-border {
+		clip-path: url('#svgFooterInnerPath');
+		width: 100%;
+		left: 50%;
+		top: 20px;
+		transform: translateX(-50%);
+		bottom: 195px;
+		position: absolute;
+		background-color: $blue-darker;
+	}
+	.banner-inner {
+		clip-path: url('#svgFooterBackgroundPath');
+		width: 100%;
+		left: 50%;
+		top: 5px;
+		transform: translateX(-50%);
+		bottom: 5px;
+		position: absolute;
+		background-size: 37%;
+		&::before {
+            background-image: linear-gradient(to top, $blue-darker 5%, rgba($blue-darker, .5), transparent, transparent);
+			position: absolute;
+			content: '';
+			left: 0;
+			width: 100%;
+			bottom: 0;
+			height: 100%;
+			z-index: 0;
+		}
+	}
+
     @media (max-width: $breakpointLarge) {
         .uk-container {
             height: 1090px;
@@ -42,16 +91,6 @@
             margin-bottom: 20px;
         }
     }
-}
-
-.footer-banner {
-    border-top: 4px solid $blue-darker;
-    min-height: 710px;
-    display: block;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 100%;
 }
 
 .footer-container {

@@ -72,6 +72,7 @@ input[type='submit'] {
 	text-transform: none;
 	overflow: hidden;
 	padding: 0;
+	text-align: left;
 
 	&::before {
 		--size: 0;

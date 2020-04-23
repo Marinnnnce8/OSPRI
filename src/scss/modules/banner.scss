@@ -1,7 +1,267 @@
 //----------  banner
 //------------------------------------------------------------------------------
 .banner {
-	min-height: 920px;
-	background-color: $blue-light;
-	padding-bottom: 415px;
+	position: relative;
+
+	.uk-container {
+		min-height: 920px;
+	}
+
+	.banner-outer-border,
+	.banner-inner-border,
+	.banner-inner,
+	.banner-inner::before {
+		position: absolute;
+	}
+
+	.banner-inner-border,
+	.banner-inner,
+	.banner-inner::before {
+		width: 100%;
+	}
+
+	.banner-outer-border {
+		width: 300%;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		bottom: 0;
+		clip-path: url('#svgBannerOuterPath');
+		background-color: $green-light;
+	}
+
+	.banner-inner-border {
+		clip-path: url('#svgBannerInnerPath');
+		left: 50%;
+		top: 20px;
+		transform: translateX(-50%);
+		bottom: 195px;
+		background-color: $green-border;
+	}
+
+	.banner-inner {
+		clip-path: url('#svgBannerBackgroundPath');
+		left: 50%;
+		top: 5px;
+		transform: translateX(-50%);
+		bottom: 5px;
+		background-size: 37%;
+
+		&::before {
+			background-image: linear-gradient(to top, $green-border 3%, rgba($green-border, .5), transparent, transparent);
+			content: '';
+			left: 0;
+			bottom: 0;
+			height: 100%;
+			z-index: 0;
+		}
+	}
+
+	h2 {
+		color: $white;
+	}
+
+	@media (max-width: $breakpointLarge) {
+		.uk-container {
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+	}
+
+	@media (max-width: $breakpointSmall) {
+		.uk-container {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
+.banner-text {
+	bottom: 385px;
+	position: absolute;
+	left: 35px;
+	width: calc(100% - 65px);
+
+	@media (max-width: $breakpointLarge) {
+		left: 40px;
+		width: calc(100% - 80px);
+	}
+
+	@media (max-width: $breakpointSmall) {
+		left: 20px;
+		width: calc(100% - 40px);
+	}
+}
+
+.banner-internal {
+	.uk-container {
+		padding: 0;
+	}
+
+	.banner-text {
+		left: 55px;
+	}
+
+	.banner-outer-border {
+		background-color: $blue-light;
+	}
+
+	.banner-inner-border {
+		background-color: $blue-darker;
+	}
+
+	.banner-inner::before {
+		background-image: linear-gradient(to top, $blue-darker 3%, rgba($blue-darker, .5), transparent, transparent);
+	}
+
+	@media (max-width: $breakpointSmall) {
+		.banner-text {
+			left: 20px;
+		}
+	}
+}
+
+.banner-small {
+	position: relative;
+
+	.uk-container {
+		min-height: 675px;
+		max-width: 780px;
+	}
+
+	.banner-outer-border,
+	.banner-inner {
+		position: absolute;
+		transform: translateX(-50%);
+		left: 50%;
+	}
+
+	.banner-outer-border {
+		width: 300%;
+		top: 0;
+		bottom: 0;
+		clip-path: url('#svgSmallBannerOuterPath');
+		background-color: $blue-light;
+	}
+
+	.banner-inner {
+		clip-path: url('#svgSmallBannerInnerPath');
+		width: 100%;
+		top: 20px;
+		bottom: 195px;
+		background-color: $blue-ultra;
+	}
+}
+
+.banner-ellipse {
+	position: relative;
+
+	.uk-container {
+		min-height: 1065px;
+	}
+
+	.banner-outer-border,
+	.banner-inner-border,
+	.banner-inner,
+	.banner-inner::before {
+		position: absolute;
+	}
+
+	.banner-outer-border {
+		width: 130%;
+		left: 1%;
+		top: 0;
+		bottom: 0;
+		clip-path: url('#svgEllipseOuterPath');
+	}
+
+	.banner-inner-border {
+		clip-path: url('#svgEllipseInnerPath');
+		left: 50px;
+		top: 17px;
+		bottom: 175px;
+		width: 92%;
+	}
+
+	.banner-inner {
+		clip-path: url('#svgEllipseBackgroundPath');
+		left: 4%;
+		top: 1%;
+		bottom: 75px;
+		background-size: cover;
+		width: 93%;
+
+		&::before {
+			content: '';
+			left: 0;
+			bottom: 0;
+			height: 100%;
+			z-index: 0;
+			width: 100%;
+		}
+	}
+
+	h2 {
+		color: $white;
+	}
+}
+
+.banner-home {
+	.banner-outer-border {
+		background-color: $blue-light;
+	}
+
+	.banner-inner-border {
+		background-color: $blue-darker;
+	}
+
+	.banner-inner::before {
+		background-image: linear-gradient(to right, $blue-darker 1%, rgba($blue-darker, .2), transparent, transparent);
+	}
+
+	h1 {
+		margin-bottom: 25px;
+		font-size: 44px;
+	}
+
+	.banner-text {
+		max-width: 890px;
+		position: relative;
+		bottom: auto;
+		left: auto;
+		width: 100%;
+		padding-top: 260px;
+	}
+
+	.uk-button-primary {
+		background-color: $white;
+
+		span {
+			color: $blue-dark;
+			font-size: 20px;
+			padding: 11px 61px 13px 38px;
+
+			&::after {
+				font-size: 15px;
+				content: font-char($chevron-down);
+				font-weight: 400;
+				top: 12px;
+				right: 24px;
+			}
+		}
+	}
+}
+
+.banner-guidance {
+	.banner-outer-border {
+		background-color: $blue-shade;
+	}
+
+	.banner-inner-border {
+		background-color: $blue-aqua;
+	}
+
+	.banner-inner::before {
+		background-image: linear-gradient(to right, $blue-aqua 1%, rgba($blue-aqua, .2), transparent, transparent);
+	}
 }
