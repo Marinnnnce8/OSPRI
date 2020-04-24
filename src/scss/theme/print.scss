@@ -1,12 +1,109 @@
 @media print {
+
 	.header,
 	.footer,
 	.nb-block-form,
 	.TextformatterVideoEmbed,
 	.uk-button,
+	.banner-outer-border,
+	.banner-inner-border,
+	.banner-inner,
+	.report-icon,
+	.guidance-icon,
+	.font-calendar::before,
+	.font-info::before,
+	.banner-home .font-info,
+	.banner-ellipse .banner-outer-border,
+	.about-img,
+	.nb-block-gallery,
+	.nb-block-slideshow,
+	.uk-accordion,
 	.uk-breadcrumb,
 	.uk-pagination,
 	.uk-modal {
 		display: none !important;
+	}
+
+	.uk-text-lead {
+		font-size: 20px !important;
+	}
+
+	.uk-alert {
+		border: 0 !important;
+	}
+
+	.banner-text {
+		max-width: 100% !important;
+		padding: 0 !important;
+		position: relative !important;
+		top: auto !important;
+		left: auto !important;
+		bottom: auto !important;
+	}
+
+	.uk-container {
+		min-height: 0 !important;
+		max-width: 1200px !important;
+	}
+
+	.nb-standard-container,
+	.about-section {
+		margin-top: 0 !important;
+	}
+
+	.nb-standard-container {
+		padding: 10px 0 !important;
+	}
+
+	.about-section {
+		padding-bottom: 20px !important;
+	}
+
+	.uk-grid {
+		flex-direction: column !important;
+
+		>* {
+			width: 100% !important;
+			margin: 0 !important;
+		}
+	}
+
+	.uk-card,
+	.guidance-list li {
+		width: 100% !important;
+		padding: 0 !important;
+		margin-bottom: 10px !important;
+
+		.font-calendar,
+		.font-info {
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+	}
+
+	.guidance-title {
+		padding: 0 !important;
+	}
+	
+	h1 {
+		font-size: 28px !important;
+	}
+
+	h2 {
+		font-size: 26px !important;
+	}
+
+	h3 {
+		font-size: 22px !important;
+	}
+
+	blockquote {
+		margin-left: 0 !important;
+		border: 0 !important;
+		padding: 0 !important;
+
+		p {
+			font-size: 18px !important;
+		}
 	}
 }

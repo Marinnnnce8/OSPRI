@@ -23,6 +23,7 @@ h1 {
 	margin-bottom: 10px;
 	font-size: 67px;
 	color: $white;
+
 	@media (max-width: $breakpointSmall) {
 		font-size: 47px;
 	}
@@ -30,9 +31,11 @@ h1 {
 
 h2 {
 	font-size: 74px;
+
 	@media (max-width: $breakpointLarge) {
 		font-size: 54px;
 	}
+
 	@media (max-width: $breakpointSmall) {
 		font-size: 44px;
 	}
@@ -104,4 +107,17 @@ blockquote {
 	span {
 		font-size: 18px;
 	}
+	@media (max-width: $breakpointSmall) {
+		margin-left: 10px;
+		padding: 10px 0 7px 15px;
+	}
+}
+
+abbr[title] {
+	font-size: inherit;
+	color: inherit;
+	font-family: inherit;
+	border-bottom: 0 !important;// sass-lint:disable-line no-important
+	cursor: inherit !important;// sass-lint:disable-line no-important
+	text-decoration: none !important;// sass-lint:disable-line no-important
 }

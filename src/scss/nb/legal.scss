@@ -24,6 +24,10 @@
 			}
 		}
 	}
+	@media (max-width: $breakpointLarge) {
+		padding: 0 0 0 45px;
+        width: auto;
+    }
 	@media (max-width: $breakpointSmall) {
 		padding: 0;
         width: 100%;

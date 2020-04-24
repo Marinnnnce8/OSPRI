@@ -19,15 +19,10 @@
 @import 'layout/forms.scss';
 
 // UIkit
-@import "uikit/base.scss";
-@import "uikit/navbar.scss";
-@import "uikit/logo.scss";
 @import "uikit/breadcrumb.scss";
-@import "uikit/form.scss";
 
 // NB
 @import "nb/block.scss";
-@import "nb/responsive.scss";
 @import "nb/file-icon.scss";
 @import "nb/legal.scss";
 @import "nb/credit.scss";
@@ -69,74 +64,6 @@ a:hover {
 	}
 }
 
-// uikit/breadcrumb
-.uk-breadcrumb {
-	margin: 0 0 40px;
-
-	>*>* {
-		font-size: 14px;
-		color: $white;
-		position: relative;
-	}
-
-	>:nth-child(n+2):not(.uk-first-column)::before {
-		content: font-char($chevron-right);
-		font-family: 'svgicons';
-		font-size: 8px;
-		margin: 0 11px;
-		color: $white;
-	}
-
-	>li:not(:first-of-type) a::after {
-		position: absolute;
-		left: 0;
-		height: 1px;
-		background-color: $white;
-		content: '';
-		width: 100%;
-		bottom: 0;
-	}
-
-	> :last-child>* {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		display: inline-block;
-		vertical-align: middle;
-		color: $white;
-	}
-
-	.font-home::before {
-		font-size: 18px;
-		top: 2px;
-		position: relative;
-	}
-
-	a {
-		&::after {
-			transition: inherit;
-		}
-
-		@include hover {
-			color: $white;
-
-			&::after {
-				opacity: 0;
-			}
-		}
-
-		&.font-home {
-			@include hover {
-				color: rgba($white, .7);
-			}
-		}
-	}
-
-	// @media (max-width: $breakpointXsmallMax) {
-	// 	max-width: 128px;
-	// }
-}
-
 // uikit/form
 .uk-input:not(.uk-form-danger),
 .uk-select:not(.uk-form-danger),
@@ -151,7 +78,7 @@ a:hover {
 	font-size: 16px;
 	color: $blue-dark;
 	min-height: 55px;
-	padding: 18px 20px;
+	padding: 12px 20px;
 
 	&:focus {
 		border-color: $blue-darker;
@@ -161,40 +88,6 @@ a:hover {
 .uk-textarea:not(.uk-form-danger) {
 	min-height: 150px;
 	resize: vertical;
-}
-
-// theme/header
-#nav {
-
-	@media (max-width: $breakpointXsmallMax) {
-		background-color: $nbWhite;
-		border-top: 1px solid $nbOffWhite;
-		height: calc(100% - 80px);
-		left: 0;
-		overflow: auto;
-		position: fixed;
-		top: 80px;
-		width: 100%;
-
-		&.nav-toggle {
-			display: none;
-		}
-
-		.uk-navbar-nav {
-			display: block;
-			padding-bottom: $nbGutter;
-			padding-top: $nbGutter;
-		}
-
-		.uk-navbar-item,
-		.uk-navbar-nav>li>a,
-		.uk-navbar-toggle {
-			display: block;
-			min-height: 0;
-			padding-bottom: $nbGutter;
-			padding-top: $nbGutter;
-		}
-	}
 }
 
 // theme/footer

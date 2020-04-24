@@ -3,10 +3,10 @@ var $nb = NB.util,
   theme = {
     init: function () {
       this.ga(), this.blocks(), this.toggleBurgerMenuClass();
-      // var ospriBtns = document.getElementsByClassName("uk-button");
-      // for (var i = 0; i < ospriBtns.length; i++) {
-      //   this.buttonHover(ospriBtns[i]);
-      // }
+      var ospriBtns = document.getElementsByClassName("uk-button");
+      for (var i = 0; i < ospriBtns.length; i++) {
+        this.buttonHover(ospriBtns[i]);
+      }
     },
     ga: function () {
       var a = $nb.$("ga", "[data]");
@@ -99,16 +99,16 @@ var $nb = NB.util,
       burgerBtn.addEventListener("click", function () {
         this.classList.toggle(burgerBtnActive);
       });
-    }
-    // buttonHover: function (obj) {
-    //   obj.onmousemove = (e) => {
-    //     const x = e.pageX - e.target.offsetLeft;
-    //     const y = e.pageY - e.target.offsetTop;
+    },
+    buttonHover: function (obj) {
+      obj.onmousemove = (e) => {
+        const x = e.pageX - e.target.offsetLeft;
+        const y = e.pageY - e.target.offsetTop;
 
-    //     e.target.style.setProperty("--x", `${x}px`);
-    //     e.target.style.setProperty("--y", `${y}px`);
-    //   };
-    // }
+        e.target.style.setProperty("--x", `${x}px`);
+        e.target.style.setProperty("--y", `${y}px`);
+      };
+    },
   };
 function renderItems(a, t) {
   for (

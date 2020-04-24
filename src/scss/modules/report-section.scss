@@ -2,7 +2,7 @@
     background-color: transparent;
     padding: 0;
 
-    h2 {
+    .read-only {
         border: 0;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -22,32 +22,50 @@
     .uk-grid-medium>.uk-grid-margin {
         margin-top: 25px;
     }
+
+    >.nb-standard-container {
+        margin-top: -440px;
+        h2 {
+            color: $white;
+        }
+        .uk-button-secondary {
+            margin: 55px 0 10px;
+            font-size: 18px;
+        }
+    }
+
     @media (max-width: $breakpointLarge) {
-        >.uk-container {
+        .uk-container {
             padding-left: 40px;
             padding-right: 40px;
         }
+
         .uk-grid-medium>* {
             padding-left: 30px;
         }
-    
+
         *+.uk-grid-margin-medium,
         .uk-grid+.uk-grid-medium,
         .uk-grid-medium>.uk-grid-margin {
             margin-top: 30px;
         }
+        >.nb-standard-container {
+			margin-top: -380px;
+		}
     }
+
     @media (max-width: $breakpointSmall) {
-		>.uk-container {
-			padding-left: 20px;
-			padding-right: 20px;
-        }	
+        .uk-container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
         *+.uk-grid-margin-medium,
         .uk-grid+.uk-grid-medium,
         .uk-grid-medium>.uk-grid-margin {
             margin-top: 25px;
         }
-	}
+    }
 }
 
 .report-card {
@@ -89,6 +107,7 @@
 
     .uk-button {
         width: 100%;
+
         span {
             color: $green-btn;
         }
@@ -97,8 +116,10 @@
     .uk-card-body {
         padding: 0;
     }
+
     @include hover {
         box-shadow: 3px 15px 41px 12px rgba($black, .15);
+
         h3 {
             text-decoration: underline;
         }

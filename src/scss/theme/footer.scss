@@ -1,5 +1,6 @@
 .footer {
     overflow: hidden;
+
     &::before {
         position: absolute;
         left: 0;
@@ -7,7 +8,7 @@
         background-color: $blue-light;
         bottom: 0;
         content: '';
-        height: 50%;     
+        height: 50%;
     }
 
     .uk-container {
@@ -30,60 +31,101 @@
         color: $white;
     }
 
+    .banner-outer-border,
+    .banner-inner-border,
+    .banner-inner,
+    .banner-inner::before {
+        position: absolute;
+    }
+
+    .banner-outer-border,
+    .banner-inner-border,
+    .banner-inner {
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .banner-inner-border,
+    .banner-inner,
+    .banner-inner::before {
+        width: 100%;
+    }
+
     .banner-outer-border {
-		width: 300%;
-		left: 50%;
-		top: 0;
-		transform: translateX(-50%);
-		bottom: 0;
-		position: absolute;
-		clip-path: url('#svgFooterOuterPath');
+        width: 300%;
+        top: 0;
+        bottom: 0;
+        clip-path: url('#svgFooterOuterPath');
         background-color: $blue-light;
-	}
-	.banner-inner-border {
-		clip-path: url('#svgFooterInnerPath');
-		width: 100%;
-		left: 50%;
-		top: 20px;
-		transform: translateX(-50%);
-		bottom: 195px;
-		position: absolute;
-		background-color: $blue-darker;
-	}
-	.banner-inner {
-		clip-path: url('#svgFooterBackgroundPath');
-		width: 100%;
-		left: 50%;
-		top: 5px;
-		transform: translateX(-50%);
-		bottom: 5px;
-		position: absolute;
-		background-size: 37%;
-		&::before {
+    }
+
+    .banner-inner-border {
+        clip-path: url('#svgFooterInnerPath');
+        top: 25px;
+        bottom: 195px;
+        background-color: $blue-darker;
+    }
+
+    .banner-inner {
+        clip-path: url('#svgFooterBackgroundPath');
+        top: 5px;
+        bottom: 5px;
+        background-size: 37%;
+
+        &::before {
             background-image: linear-gradient(to top, $blue-darker 5%, rgba($blue-darker, .5), transparent, transparent);
-			position: absolute;
-			content: '';
-			left: 0;
-			width: 100%;
-			bottom: 0;
-			height: 100%;
-			z-index: 0;
-		}
-	}
+            content: '';
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            z-index: 0;
+        }
+    }
+
+    @media (max-width: $breakpointXlarge) {
+        .banner-inner {
+            background-size: 50%;
+        }
+    }
 
     @media (max-width: $breakpointLarge) {
         .uk-container {
             height: 1090px;
         }
+
+        .banner-outer-border {
+            width: 600%;
+        }
+
+        .banner-inner-border {
+            bottom: 490px;
+        }
+
+        .banner-inner {
+            background-size: 40%;
+        }
     }
 
     @media (max-width: $breakpointSmall) {
         .uk-container {
-            height: 1120px;
+            height: 1125px;
         }
 
         .uk-position-bottom-center {
             max-width: calc(100% - 40px);
+        }
+
+        .banner-outer-border {
+            width: 800%;
+        }
+
+        .banner-inner-border {
+            top: 22px;
+            bottom: 635px;
+        }
+
+        .banner-inner {
+            background-size: 45%;
         }
 
         h2 {
@@ -111,8 +153,7 @@
 .footer-top {
     margin-bottom: 25px;
 
-    .uk-logo,
-    .footer-top-inner {
+    .uk-logo {
         width: 50%;
     }
 
@@ -149,11 +190,16 @@
         h3 {
             margin-bottom: 30px;
         }
+
+        .uk-logo {
+            margin-bottom: 45px;
+        }
     }
 }
 
 .footer-top-inner {
     padding-left: 15px;
+    width: 50%;
 
     a {
         position: relative;
@@ -184,7 +230,15 @@
         padding-left: 0;
 
         >.uk-flex {
+            justify-content: flex-start;
+        }
+    }
+
+    @media (max-width: $breakpointSmall) {
+
+        >.uk-flex {
             flex-direction: column;
+            width: 100%;
         }
     }
 }
@@ -210,6 +264,10 @@
             left: 37px;
             width: calc(100% - 37px);
         }
+    }
+
+    @media (max-width: $breakpointLarge) {
+        width: auto;
     }
 
     @media (max-width: $breakpointSmall) {
@@ -259,8 +317,14 @@
     }
 
     @media (max-width: $breakpointSmall) {
-        >.uk-flex>.uk-flex {
-            flex-direction: column;
+        >.uk-flex {
+            >img {
+                margin-bottom: 30px;
+            }
+
+            >.uk-flex {
+                flex-direction: column;
+            }
         }
     }
 }

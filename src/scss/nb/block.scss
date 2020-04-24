@@ -9,9 +9,12 @@
 }
 
 .nb-standard-container {
-	margin-top: -385px;
+	margin-top: -375px;
 	position: relative;
 	z-index: 1;
+	@media (max-width: $breakpointSmall) {
+		margin-top: -240px;
+	}
 }
 
 .nb-internal-wrap {
@@ -24,7 +27,7 @@
 	}
 
 	@media (max-width: $breakpointSmall) {
-		padding: 60px 20px 95px;
+		padding: 60px 15px 95px;
 	}
 }
 
@@ -244,6 +247,7 @@
 			@media (max-width: $breakpointSmall) {
 				li .uk-accordion-title {
 					padding: 20px 20px 20px 35px;
+					font-size: 16px;
 
 					&::before {
 						left: 0;
@@ -289,6 +293,8 @@
 			color: $black;
 			padding: 14px 2px 5px 25px;
 			text-align: center;
+			pointer-events: none;
+			display: inline;
 		}
 
 		.align_right {
@@ -606,4 +612,7 @@
 .nb-copyright {
 	font-size: 13px;
 	color: $nbGrey;
+    @media (max-width: $breakpointSmall) {
+		margin-bottom: 20px;
+	}
 }

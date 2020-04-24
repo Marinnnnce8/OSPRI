@@ -45,7 +45,7 @@
 		top: 5px;
 		transform: translateX(-50%);
 		bottom: 5px;
-		background-size: 37%;
+		background-size: 42%;
 
 		&::before {
 			background-image: linear-gradient(to top, $green-border 3%, rgba($green-border, .5), transparent, transparent);
@@ -61,17 +61,44 @@
 		color: $white;
 	}
 
+	@media (max-width: $breakpointXlarge) {
+		.banner-inner {
+			background-size: 55%;
+		}
+	}
+
 	@media (max-width: $breakpointLarge) {
 		.uk-container {
-			padding-left: 40px;
-			padding-right: 40px;
+			min-height: 740px;
+		}
+		.banner-outer-border {
+			width: 380%;
+		}
+		.banner-inner-border {
+			top: 15px;
+			bottom: 155px;
+		}
+		.banner-inner {
+			background-size: 57%;
 		}
 	}
 
 	@media (max-width: $breakpointSmall) {
+		.banner-text {
+			bottom: 235px;
+		}
 		.uk-container {
-			padding-left: 20px;
-			padding-right: 20px;
+			min-height: 595px;
+		}
+		.banner-outer-border {
+			width: 500%;
+		}
+		.banner-inner-border {
+			top: 13px;
+			bottom: 125px;
+		}
+		.banner-inner {
+			background-size: 70%;
 		}
 	}
 }
@@ -116,7 +143,8 @@
 
 	@media (max-width: $breakpointSmall) {
 		.banner-text {
-			left: 20px;
+			left: 15px;
+			bottom: 235px;
 		}
 	}
 }
@@ -150,6 +178,38 @@
 		top: 20px;
 		bottom: 195px;
 		background-color: $blue-ultra;
+	}
+	
+	@media (max-width: $breakpointLarge) {
+		.uk-container {
+			min-height: 550px;
+		}
+		.banner-text {
+			bottom: 230px;
+		}
+		.banner-outer-border {
+			width: 380%;
+		}
+		.banner-inner {
+			bottom: 135px;
+		}
+		+ .guidance-section {
+			margin-top: -230px;
+		}
+	}
+	@media (max-width: $breakpointSmall) {
+		.uk-container {
+			min-height: 500px;
+		}
+		.banner-text {
+			bottom: 235px;
+		}
+		.banner-outer-border {
+			width: 560%;
+		}
+		.banner-inner {
+			bottom: 100px;
+		}
 	}
 }
 
@@ -204,6 +264,53 @@
 	h2 {
 		color: $white;
 	}
+
+	@media (max-width: $breakpointXlarge) {
+		.banner-outer-border {
+			width: 190%;
+			left: -12%;
+		}
+	}
+
+	@media (max-width: $breakpointLarge) {
+		.uk-container {
+			min-height: 845px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		.banner-inner-border {
+			bottom: 140px;
+			left: 30px;
+			top: 7px;
+		}
+
+		.banner-inner {
+			bottom: 60px;
+		}
+	}
+
+	@media (max-width: $breakpointSmall) {
+		.uk-container {
+			min-height: 635px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.banner-outer-border {
+			width: 300%;
+			left: -45%;
+		}
+
+		.banner-inner-border {
+			bottom: 95px;
+			top: 5px;
+		}
+
+		.banner-inner {
+			bottom: 45px;
+		}
+	}
 }
 
 .banner-home {
@@ -219,11 +326,6 @@
 		background-image: linear-gradient(to right, $blue-darker 1%, rgba($blue-darker, .2), transparent, transparent);
 	}
 
-	h1 {
-		margin-bottom: 25px;
-		font-size: 44px;
-	}
-
 	.banner-text {
 		max-width: 890px;
 		position: relative;
@@ -231,6 +333,11 @@
 		left: auto;
 		width: 100%;
 		padding-top: 260px;
+	}
+
+	h1 {
+		margin-bottom: 25px;
+		font-size: 44px;
 	}
 
 	.uk-button-primary {
@@ -245,9 +352,64 @@
 				font-size: 15px;
 				content: font-char($chevron-down);
 				font-weight: 400;
-				top: 12px;
+				top: 50%;
+				transform: translateY(-50%);
 				right: 24px;
 			}
+		}
+	}
+
+	.font-info {
+		position: absolute;
+		right: 40px;
+		bottom: 205px;
+		color: $white;
+		padding-left: 30px;
+		font-size: 14px;
+
+		&::before {
+			color: inherit;
+			left: 0;
+			position: absolute;
+			font-size: 18px;
+			top: 2px;
+		}
+	}
+
+	@media (max-width: $breakpointLarge) {
+		.banner-text {
+			padding-top: 190px;
+		}
+
+		h1 {
+			font-size: 34px;
+		}
+		.font-info {
+			bottom: 160px;
+		}
+	}
+
+	@media (max-width: $breakpointSmall) {
+		.banner-text {
+			padding-top: 120px;
+		}
+
+		h1 {
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
+
+		.uk-button-primary {
+			max-width: 100%;
+			min-width: 280px;
+
+			span {
+				font-size: 16px;
+				padding: 4px 61px 5px 26px;
+			}
+		}
+		.font-info {
+			display: none;
 		}
 	}
 }
@@ -262,6 +424,6 @@
 	}
 
 	.banner-inner::before {
-		background-image: linear-gradient(to right, $blue-aqua 1%, rgba($blue-aqua, .2), transparent, transparent);
+		background-image: linear-gradient(to right, $blue-aqua 2%, rgba($blue-aqua, .2), transparent, transparent);
 	}
 }

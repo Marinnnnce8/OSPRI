@@ -1,5 +1,5 @@
 .guidance-section {
-    h2 {
+    .read-only {
         border: 0;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -12,18 +12,34 @@
     >.uk-container-small {
         max-width: 785px;
     }
+    >.nb-standard-container {
+        margin-top: -650px;
+        h2 {
+            color: $white;
+        }
+    }
     @media (max-width: $breakpointLarge) {
-        >.uk-container {
+        .uk-container {
             padding-left: 40px;
             padding-right: 40px;
         }
+        >.nb-standard-container {
+            margin-top: -520px;
+        }
     }
     @media (max-width: $breakpointSmall) {
-		>.uk-container {
+		.uk-container {
 			padding-left: 20px;
 			padding-right: 20px;
         }
+        >.nb-standard-container {
+            margin-top: -420px;
+        }
 	}
+}
+
+.guidance-inner {
+    max-width: 890px;
 }
 
 .guidance-list {
@@ -64,7 +80,7 @@
     }
 }
 
-.guidance-img {
+.guidance-icon {
     background-color: $blue-outline-bg;
     border-radius: 10px;
     height: 70px;
