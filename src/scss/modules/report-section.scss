@@ -25,9 +25,11 @@
 
     >.nb-standard-container {
         margin-top: -440px;
+
         h2 {
             color: $white;
         }
+
         .uk-button-secondary {
             margin: 55px 0 10px;
             font-size: 18px;
@@ -49,9 +51,10 @@
         .uk-grid-medium>.uk-grid-margin {
             margin-top: 30px;
         }
+
         >.nb-standard-container {
-			margin-top: -380px;
-		}
+            margin-top: -380px;
+        }
     }
 
     @media (max-width: $breakpointSmall) {
@@ -122,6 +125,17 @@
 
         h3 {
             text-decoration: underline;
+        }
+
+        .uk-button {
+            background: $green-pastel-alt;
+            border-color: $green-pastel-alt;
+            span {
+                color: $white;
+                &::after {
+                    color: inherit;
+                }
+            }
         }
     }
 }

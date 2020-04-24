@@ -21,18 +21,19 @@ input[type='submit'] {
 	padding: 0;
 }
 
-.uk-button, 
+.uk-button,
 .uk-button-text {
 	font-family: $font-rubik;
 	font-weight: $bold;
 	position: relative;
 	font-size: 16px;
+	transition: $nbSec ease-in-out;
 }
 
 .uk-button-text {
 	color: $blue-darker;
 	padding-right: 30px;
-	
+
 	&::after {
 		position: absolute;
 		right: 0;
@@ -42,30 +43,38 @@ input[type='submit'] {
 		font-family: 'svgicons';
 		content: font-char($chevron-right);
 	}
+
 	&::before {
 		display: none;
 	}
+
 	&.uk-text-large {
 		font-size: 20px;
 	}
+
 	&.uk-button-text-green {
-		color: $green;	
+		color: $green;
 	}
+
 	&.uk-button-text-red {
-		color: $red;	
+		color: $red;
 	}
+
 	@include hover {
 		color: $blue-dark;
+
 		&.uk-button-text-green {
-			color: $green;	
+			color: $green;
 		}
+
 		&.uk-button-text-red {
-			color: $red;	
+			color: $red;
 		}
 	}
 }
 
 .uk-button {
+	appearance: none;
 	border-width: 4px;
 	border-style: solid;
 	border-radius: 15px;
@@ -75,17 +84,15 @@ input[type='submit'] {
 	text-align: left;
 
 	&::before {
-		--size: 0;
-
 		content: '';
 		position: absolute;
 		background: radial-gradient(circle closest-side, $red, transparent);
 		left: var(--x);
 		top: var(--y);
-		width: var(--size);
-		height: var(--size);
+		width: 0;
+		height: 0;
 		transform: translate(-50%, -50%);
-		transition: width .2s ease, height .2s ease;
+		transition: .1 ease;
 		z-index: 1;
 	}
 
@@ -96,6 +103,8 @@ input[type='submit'] {
 		padding: 4px 80px 5px 33px;
 		font-size: inherit;
 		width: 100%;
+		transition: $nbSec ease-in-out;
+		z-index: 1;
 
 		&::after {
 			position: absolute;
@@ -134,17 +143,29 @@ input[type='submit'] {
 		}
 	}
 
+	&.uk-button-green::before {
+		background: radial-gradient(circle closest-side, $blue-dark, transparent);
+	}
+
+	&.uk-button-red::before {
+		background: radial-gradient(circle closest-side, $green-btn, transparent);
+	}
+
 	@include hover {
+		background-color: transparent;
+		border-color: transparent;
+
 		&::before {
-			--size: 400px;
+			width: 400px;
+			height: 400px;
 		}
 
-		&.uk-button-green::before {
-			background: radial-gradient(circle closest-side, $blue-dark, transparent);
+		&.uk-button-green {
+			border-color: $blue-dark;
 		}
 
-		&.uk-button-red::before {
-			background: radial-gradient(circle closest-side, $green-btn, transparent);
+		&.uk-button-red {
+			border-color: $green-btn;
 		}
 	}
 }
@@ -162,6 +183,10 @@ input[type='submit'] {
 
 	&.uk-button-red {
 		background-color: $red-btn;
+	}
+	@include hover {
+		background-color: transparent;
+		border-color: $red;
 	}
 }
 
@@ -182,6 +207,16 @@ input[type='submit'] {
 			color: $red;
 		}
 	}
+
+	@include hover {
+		span {
+			color: $white;
+
+			&::before {
+				color: $white;
+			}
+		}
+	}
 }
 
 .uk-button-default {
@@ -193,6 +228,9 @@ input[type='submit'] {
 
 	&.uk-button-red {
 		border-color: $red-outline-bg;
+	}
+	@include hover {
+		background-color: transparent;
 	}
 }
 
@@ -207,4 +245,3 @@ input[type='submit'] {
 		background-color: $red-outline-bg;
 	}
 }
-

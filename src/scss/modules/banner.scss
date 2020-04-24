@@ -357,6 +357,14 @@
 				right: 24px;
 			}
 		}
+		@include hover {
+			span {
+				color: $white;
+				&::after {
+					color: inherit;
+				}
+			}
+		}
 	}
 
 	.font-info {

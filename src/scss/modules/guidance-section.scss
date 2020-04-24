@@ -63,6 +63,16 @@
             h3 {
                 text-decoration: underline;
             }
+            .uk-button {
+                background: $blue-ultra;
+                border-color: $blue-ultra;
+                span {
+                    color: $white;
+                    &::after {
+                        color: inherit;
+                    }
+                }
+            }
         }
     }
     @media (max-width: $breakpointLarge) {
