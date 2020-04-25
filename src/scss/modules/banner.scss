@@ -71,13 +71,16 @@
 		.uk-container {
 			min-height: 740px;
 		}
+
 		.banner-outer-border {
 			width: 380%;
 		}
+
 		.banner-inner-border {
 			top: 15px;
 			bottom: 155px;
 		}
+
 		.banner-inner {
 			background-size: 57%;
 		}
@@ -87,16 +90,20 @@
 		.banner-text {
 			bottom: 235px;
 		}
+
 		.uk-container {
 			min-height: 595px;
 		}
+
 		.banner-outer-border {
 			width: 500%;
 		}
+
 		.banner-inner-border {
 			top: 13px;
 			bottom: 125px;
 		}
+
 		.banner-inner {
 			background-size: 70%;
 		}
@@ -179,34 +186,42 @@
 		bottom: 195px;
 		background-color: $blue-ultra;
 	}
-	
+
 	@media (max-width: $breakpointLarge) {
 		.uk-container {
 			min-height: 550px;
 		}
+
 		.banner-text {
 			bottom: 230px;
 		}
+
 		.banner-outer-border {
 			width: 380%;
 		}
+
 		.banner-inner {
 			bottom: 135px;
 		}
-		+ .guidance-section {
+
+		+.guidance-section {
 			margin-top: -230px;
 		}
 	}
+
 	@media (max-width: $breakpointSmall) {
 		.uk-container {
 			min-height: 500px;
 		}
+
 		.banner-text {
 			bottom: 235px;
 		}
+
 		.banner-outer-border {
 			width: 560%;
 		}
+
 		.banner-inner {
 			bottom: 100px;
 		}
@@ -342,6 +357,9 @@
 
 	.uk-button-primary {
 		background-color: $white;
+		&::before {
+			background: radial-gradient(circle closest-side, $blue-dark, transparent);
+		}
 
 		span {
 			color: $blue-dark;
@@ -357,9 +375,11 @@
 				right: 24px;
 			}
 		}
+
 		@include hover {
 			span {
 				color: $white;
+
 				&::after {
 					color: inherit;
 				}
@@ -380,7 +400,7 @@
 			left: 0;
 			position: absolute;
 			font-size: 18px;
-			top: 2px;
+			top: 0;
 		}
 	}
 
@@ -392,6 +412,7 @@
 		h1 {
 			font-size: 34px;
 		}
+
 		.font-info {
 			bottom: 160px;
 		}
@@ -416,6 +437,7 @@
 				padding: 4px 61px 5px 26px;
 			}
 		}
+
 		.font-info {
 			display: none;
 		}

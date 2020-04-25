@@ -75,12 +75,11 @@ input[type='submit'] {
 
 .uk-button {
 	appearance: none;
-	border-width: 4px;
-	border-style: solid;
 	border-radius: 15px;
 	text-transform: none;
 	overflow: hidden;
 	padding: 0;
+	border: 0;
 	text-align: left;
 
 	&::before {
@@ -100,7 +99,7 @@ input[type='submit'] {
 		position: relative;
 		pointer-events: none;
 		display: inline-block;
-		padding: 4px 80px 5px 33px;
+		padding: 10px 80px 8px 37px;
 		font-size: inherit;
 		width: 100%;
 		transition: $nbSec ease-in-out;
@@ -108,12 +107,14 @@ input[type='submit'] {
 
 		&::after {
 			position: absolute;
-			right: 26px;
+			right: 30px;
 			font-size: inherit;
-			font-weight: $bold;
+			font-weight: 400;
 			color: inherit;
 			font-family: 'svgicons';
 			content: font-char($chevron-right);
+			top: 50%;
+			transform: translateY(-50%);
 		}
 	}
 
@@ -122,9 +123,9 @@ input[type='submit'] {
 		font-size: 14px;
 
 		span {
-			padding: 2px 52px 2px 25px;
+			padding: 6px 56px 6px 31px;
 
-			&::before {
+			&::after {
 				right: 20px;
 			}
 		}
@@ -135,11 +136,7 @@ input[type='submit'] {
 		font-size: 20px;
 
 		span {
-			padding: 4px 60px 5px 36px;
-
-			&::before {
-				right: 20px;
-			}
+			padding: 8px 64px 9px 40px;
 		}
 	}
 
@@ -152,20 +149,9 @@ input[type='submit'] {
 	}
 
 	@include hover {
-		background-color: transparent;
-		border-color: transparent;
-
 		&::before {
-			width: 400px;
-			height: 400px;
-		}
-
-		&.uk-button-green {
-			border-color: $blue-dark;
-		}
-
-		&.uk-button-red {
-			border-color: $green-btn;
+			width: 500px;
+			height: 500px;
 		}
 	}
 }
@@ -184,10 +170,6 @@ input[type='submit'] {
 	&.uk-button-red {
 		background-color: $red-btn;
 	}
-	@include hover {
-		background-color: transparent;
-		border-color: $red;
-	}
 }
 
 .uk-button-default,
@@ -196,16 +178,12 @@ input[type='submit'] {
 		color: $blue-outline-col;
 	}
 
-	&.uk-button-green {
-		span {
-			color: $green;
-		}
+	&.uk-button-green span {
+		color: $green;
 	}
 
-	&.uk-button-red {
-		span {
-			color: $red;
-		}
+	&.uk-button-red span {
+		color: $red;
 	}
 
 	@include hover {
@@ -220,6 +198,9 @@ input[type='submit'] {
 }
 
 .uk-button-default {
+	transition: border-color .1s ease;
+	border-width: 4px;
+	border-style: solid;
 	border-color: $blue-outline-bg;
 
 	&.uk-button-green {
@@ -229,8 +210,30 @@ input[type='submit'] {
 	&.uk-button-red {
 		border-color: $red-outline-bg;
 	}
+
+	span {
+		padding: 4px 80px 6px 33px;
+		transition: .1s ease;
+	}
+
+	&.uk-button-small span {
+		padding: 2px 52px 2px 25px;
+	}
+
+	&.uk-button-large span {
+		padding: 4px 60px 5px 36px;
+	}
+
 	@include hover {
-		background-color: transparent;
+		border-color: $red;
+
+		&.uk-button-green {
+			border-color: $blue-dark;
+		}
+
+		&.uk-button-red {
+			border-color: $green-btn;
+		}
 	}
 }
 

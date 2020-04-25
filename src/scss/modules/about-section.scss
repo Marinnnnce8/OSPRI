@@ -15,6 +15,10 @@
         border-color: $blue-aqua;
         background-color: $blue-aqua;
 
+        &::before {
+            background: radial-gradient(circle closest-side, $blue-aqua, transparent);
+        }
+
         span {
             color: $blue-dark;
             padding: 4px 51px 5px 29px;
@@ -26,15 +30,7 @@
         }
 
         @include hover {
-            border-color: $red;
-
-            span {
-                color: $white;
-
-                &::after {
-                    color: inherit;
-                }
-            }
+            background-color: transparent;
         }
     }
 

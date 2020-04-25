@@ -31,6 +31,67 @@ screen and (-ms-high-contrast: none) {
     .uk-radio:checked:not(.uk-form-danger) {
         padding: 14px 20px 10px !important;
     }
+
+    .uk-button {
+
+        &::before {
+            display: none !important;
+        }
+
+        span::after {
+            transition: $nbSec ease-in-out;
+        }
+
+        @include hover {
+            background-color: $red;
+
+            &.uk-button-green {
+                background-color: $blue-dark;
+            }
+
+            &.uk-button-red {
+                background-color: $green-btn;
+            }
+        }
+    }
+
+    .uk-button-default {
+        transition: $nbSec ease-in-out;
+
+        span {
+            transition: $nbSec ease-in-out;
+        }
+    }
+
+    .banner-home .uk-button-primary {
+        @include hover {
+            background-color: $blue-dark;
+        }
+    }
+
+    .about-section .uk-button {
+        @include hover {
+            background-color: $blue-dark;
+
+            span {
+                color: $white;
+
+                &::after {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .report-section>.nb-standard-container .uk-button-secondary {
+        @include hover {
+            background-color: $green-pastel-alt;
+
+            span {
+                color: $white;
+            }
+        }
+    }
 }
 
 @supports (-ms-ime-align:auto) {

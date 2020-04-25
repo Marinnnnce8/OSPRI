@@ -43,27 +43,6 @@
 
 // Template | Remove or Integrate
 
-// uikit/base
-a,
-.uk-link {
-	color: $nbRed;
-}
-
-.uk-link-toggle:focus .uk-link,
-.uk-link-toggle:hover .uk-link,
-.uk-link:hover,
-a:hover {
-	color: $nbRed;
-}
-
-// uikit/logo
-.uk-logo {
-
-	img {
-		width: 228px;
-	}
-}
-
 // uikit/form
 .uk-input:not(.uk-form-danger),
 .uk-select:not(.uk-form-danger),
@@ -97,4 +76,60 @@ a:hover {
 	@media (max-width: $breakpointMobile) {
 		font-size: 0.8rem;
 	}
+}
+
+/* one or more available input mechanism(s) cannot hover or there are no pointing input mechanisms */
+@media (any-hover: none) {
+    .uk-button {
+
+        &::before {
+            display: none !important;
+        }
+
+        @include hover {
+            background-color: $red;
+
+            &.uk-button-green {
+                background-color: $blue-dark;
+            }
+
+            &.uk-button-red {
+                background-color: $green-btn;
+            }
+        }
+    }
+
+    .uk-button-default {
+        transition: $nbSec ease-in-out;
+
+        span {
+            transition: $nbSec ease-in-out;
+        }
+	}
+	
+	.banner-home .uk-button-primary {
+        @include hover {
+            background-color: $blue-dark;
+        }
+	}
+	
+	.about-section .uk-button {
+        @include hover {
+			background-color: $blue-dark;
+			span {
+				color: $white;
+				&::after {
+					color: $white;
+				}
+			}
+        }
+	}
+	.report-section>.nb-standard-container .uk-button-secondary {
+        @include hover {
+            background-color: $green-pastel-alt;
+            span {
+                color: $white;
+            }
+        }
+    }
 }

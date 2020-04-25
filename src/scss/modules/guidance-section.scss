@@ -58,6 +58,10 @@
             z-index: 1;
         }
 
+        .uk-button {
+            transition: $nbSec ease-in-out;
+        }
+
         @include hover {
             box-shadow: 3px 15px 41px 12px rgba($blue-outline-col, .15);
             h3 {
