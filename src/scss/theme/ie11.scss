@@ -69,15 +69,19 @@ screen and (-ms-high-contrast: none) {
         }
     }
 
-    .about-section .uk-button {
-        @include hover {
-            background-color: $blue-dark;
+    .about-section {
+        margin-top: 0;
 
-            span {
-                color: $white;
+        .uk-button {
+            @include hover {
+                background-color: $blue-dark;
 
-                &::after {
+                span {
                     color: $white;
+
+                    &::after {
+                        color: $white;
+                    }
                 }
             }
         }
@@ -90,6 +94,12 @@ screen and (-ms-high-contrast: none) {
             span {
                 color: $white;
             }
+        }
+    }
+
+    .guidance-section .uk-button-secondary {
+        @include hover {
+            background-color: $blue-outline-col;
         }
     }
 }
@@ -114,5 +124,9 @@ screen and (-ms-high-contrast: none) {
     .uk-slideshow-items img {
         width: auto;
         max-width: none;
+    }
+
+    .about-section {
+        margin-top: 0;
     }
 }

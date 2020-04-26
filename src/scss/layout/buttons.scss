@@ -247,4 +247,7 @@ input[type='submit'] {
 	&.uk-button-red {
 		background-color: $red-outline-bg;
 	}
+	@include hover {
+		background-color: transparent;
+	}
 }

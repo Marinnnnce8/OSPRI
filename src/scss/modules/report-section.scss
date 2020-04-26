@@ -33,9 +33,11 @@
         .uk-button-secondary {
             margin: 55px 0 10px;
             font-size: 18px;
+
             &::before {
                 background: radial-gradient(circle closest-side, $green-pastel-alt, transparent);
             }
+
             @include hover {
                 span {
                     color: $green;
@@ -75,6 +77,10 @@
         .uk-grid+.uk-grid-medium,
         .uk-grid-medium>.uk-grid-margin {
             margin-top: 25px;
+        }
+        .uk-button-secondary {
+            width: 100%;
+            max-width: 280px;
         }
     }
 }
@@ -139,8 +145,10 @@
         .uk-button {
             background: $green-pastel-alt;
             border-color: $green-pastel-alt;
+
             span {
                 color: $white;
+
                 &::after {
                     color: inherit;
                 }

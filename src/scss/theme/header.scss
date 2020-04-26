@@ -87,6 +87,10 @@
 
     .nav-bottom {
 
+        .uk-parent {
+            position: relative;
+        }
+
         button:not(.burger-menu),
         a:not(.uk-logo) {
             padding: 0 15px;
@@ -121,12 +125,14 @@
         }
 
         .uk-navbar-dropdown {
+            box-shadow: 0 10px 15px rgba($black, .3);
             background: $white;
             border-radius: 20px;
-            box-shadow: none;
             min-width: 300px;
             margin-top: 20px;
             padding: 25px 23px 27px;
+            left: -45px !important; // sass-lint:disable-line no-important
+            top: 20px !important; // sass-lint:disable-line no-important
 
             a {
                 display: block;
@@ -277,6 +283,7 @@
             right: -15px;
             height: 48px;
             width: 48px;
+
             &:not(.burger-menu-active) {
                 background-color: transparent;
             }
@@ -386,6 +393,12 @@
     .uk-active>a,
     .uk-navbar-dropdown-nav>li.uk-active>a {
         color: $blue-pastel;
+    }
+
+    .uk-navbar-dropdown-nav {
+        a {
+            font-size: 20px;
+        }
     }
 
     @media (max-width: $breakpointSmall) {

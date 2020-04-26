@@ -9,33 +9,88 @@
         position: absolute;
         width: 1px;
     }
+
     >.uk-container-small {
         max-width: 785px;
     }
+
     >.nb-standard-container {
         margin-top: -650px;
+
         h2 {
             color: $white;
         }
+
+        .guidance-list li {
+            padding-right: 10px;
+        }
+
+        .guidance-info {
+            max-width: 33%;
+            padding-left: 40px;
+        }
+
+        .guidance-title {
+            max-width: 54.7%;
+        }
     }
+
+    .uk-button-secondary {
+        &::before {
+            background: radial-gradient(circle closest-side, $blue-outline-col, transparent);
+        }
+    }
+
     @media (max-width: $breakpointLarge) {
         .uk-container {
             padding-left: 40px;
             padding-right: 40px;
         }
+
         >.nb-standard-container {
             margin-top: -520px;
+
+            .guidance-info {
+                max-width: 32%;
+                padding-left: 22px;
+            }
+
+            .guidance-title {
+                max-width: 52.7%;
+            }
+        }
+        .uk-button-secondary span {
+            padding: 10px 52px 8px 37px;
+            &::after {
+                right: 20px;
+            }
         }
     }
+
     @media (max-width: $breakpointSmall) {
-		.uk-container {
-			padding-left: 20px;
-			padding-right: 20px;
+        .uk-container {
+            padding-left: 20px;
+            padding-right: 20px;
         }
+
         >.nb-standard-container {
             margin-top: -420px;
+            .guidance-info {
+                max-width: 100%;
+                padding-left: 0;
+            }
+
+            .guidance-title {
+                max-width: 100%;
+            }
         }
-	}
+        .uk-button-secondary {
+            line-height: 1.3;
+            span {
+                padding-left: 20px;
+            }
+        }
+    }
 }
 
 .guidance-inner {
@@ -64,14 +119,18 @@
 
         @include hover {
             box-shadow: 3px 15px 41px 12px rgba($blue-outline-col, .15);
+
             h3 {
                 text-decoration: underline;
             }
+
             .uk-button {
                 background: $blue-ultra;
                 border-color: $blue-ultra;
+
                 span {
                     color: $white;
+
                     &::after {
                         color: inherit;
                     }
@@ -79,15 +138,18 @@
             }
         }
     }
+
     @media (max-width: $breakpointLarge) {
         li {
             padding: 40px 25px 40px 40px;
         }
     }
+
     @media (max-width: $breakpointSmall) {
         li {
             padding: 25px 27px 30px 26px;
         }
+
         .uk-flex {
             flex-direction: column;
         }
@@ -107,6 +169,7 @@
         width: 40px;
         height: 52px;
     }
+
     @media (max-width: $breakpointSmall) {
         margin-bottom: 25px;
     }
@@ -128,25 +191,32 @@
             right: 16px;
         }
     }
+
     .guidance-info {
         display: none;
     }
+
     @media (max-width: $breakpointLarge) {
         max-width: 55%;
+
         h3 {
             font-size: 20px;
         }
     }
+
     @media (max-width: $breakpointSmall) {
         max-width: 100%;
         padding-left: 0;
+
         h3 {
             margin-bottom: 10px;
         }
+
         .uk-button {
             width: 100%;
             max-width: 227px;
         }
+
         .guidance-info {
             display: block;
         }
@@ -155,14 +225,16 @@
 
 .guidance-info {
     padding-left: 30px;
-    max-width: 27%;
+    max-width: 31%;
     padding-top: 5px;
+
     .font-calendar,
     .font-info {
         padding-left: 30px;
         color: $nbGrey;
         position: relative;
         display: block;
+
         &::before {
             color: $blue-outline-col;
             font-size: 20px;
@@ -180,10 +252,12 @@
     .font-info {
         font-size: 14px;
     }
+
     @media (max-width: $breakpointLarge) {
         padding-left: 17px;
         max-width: 31.7%;
     }
+
     @media (max-width: $breakpointSmall) {
         max-width: 100%;
         padding-left: 0;

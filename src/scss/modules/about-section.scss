@@ -1,6 +1,7 @@
 .about-section {
-    margin-top: -85px;
+    margin-top: -105px;
     padding-bottom: 90px;
+    padding-top: 30px;
 
     h2 {
         font-size: 54px;
@@ -10,6 +11,7 @@
     }
 
     .uk-button {
+        box-shadow: 0 5px 15px rgba($black, .2);
         display: inline-block;
         font-size: 18px;
         border-color: $blue-aqua;
@@ -21,10 +23,10 @@
 
         span {
             color: $blue-dark;
-            padding: 4px 51px 5px 29px;
+            padding: 9px 52px 10px 30px;
 
             &::after {
-                right: 23px;
+                right: 25px;
                 font-weight: 400;
             }
         }
@@ -32,6 +34,10 @@
         @include hover {
             background-color: transparent;
         }
+    }
+
+    blockquote {
+        padding: 5px 30px 5px 20px;
     }
 
     @media (max-width: $breakpointLarge) {
@@ -57,7 +63,7 @@
     }
 
     @media (max-width: $breakpointSmall) {
-        margin-top: -50px;
+        margin-top: -80px;
 
         .uk-container {
             padding-left: 20px;
@@ -71,6 +77,8 @@
         .uk-button {
             max-width: 280px;
             left: calc(50% + 15px);
+            min-width: 0;
+            width: 100%;
 
             span {
                 padding: 4px 46px 5px 16px;
@@ -79,6 +87,9 @@
                     right: 16px;
                 }
             }
+        }
+        blockquote {
+            padding: 5px 0 5px 18px;
         }
     }
 }

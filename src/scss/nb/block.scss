@@ -9,7 +9,7 @@
 }
 
 .nb-standard-container {
-	margin-top: -375px;
+	margin-top: -385px;
 	position: relative;
 	z-index: 1;
 	@media (max-width: $breakpointSmall) {
@@ -226,6 +226,7 @@
 						position: absolute;
 						font-family: 'svgicons';
 						left: 22px;
+						margin-left: 0;
 						content: font-char($plus);
 						float: none;
 						background-image: none;
@@ -254,7 +255,7 @@
 					font-size: 16px;
 
 					&::before {
-						left: 0;
+						left: 10px;
 					}
 				}
 
@@ -324,11 +325,8 @@
 			border-bottom-right-radius: 20px;
 			border-left-width: 5px;
 			border-left-style: solid;
-			padding: 21px 30px 17px;
-
-			p {
-				font-size: 16px;
-			}
+			padding: 21px 30px 21px;
+			font-size: 16px;
 
 			&.uk-alert-primary {
 				background-color: $blue-light;

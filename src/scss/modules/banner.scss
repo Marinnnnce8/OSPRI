@@ -357,6 +357,7 @@
 
 	.uk-button-primary {
 		background-color: $white;
+
 		&::before {
 			background: radial-gradient(circle closest-side, $blue-dark, transparent);
 		}
@@ -364,7 +365,7 @@
 		span {
 			color: $blue-dark;
 			font-size: 20px;
-			padding: 11px 61px 13px 38px;
+			padding: 15px 65px 17px 42px;
 
 			&::after {
 				font-size: 15px;
@@ -372,7 +373,7 @@
 				font-weight: 400;
 				top: 50%;
 				transform: translateY(-50%);
-				right: 24px;
+				right: 33px;
 			}
 		}
 
